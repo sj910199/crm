@@ -1,0 +1,123 @@
+/* Hide buttons by default */
+.button-container {
+  display: none; /* Hidden by default */
+  text-align: right; /* Align buttons to the right */
+  position: absolute;
+  top: 0;
+  right: 15px; /* Adjusted to bring buttons slightly left */
+  padding-right: 10px;
+  padding-top: 20px;
+  width: 20%; /* Make it take up 20% of the card's width */
+  flex-direction: column; /* Stack buttons vertically */
+}
+
+/* Show buttons when the card is hovered (desktop view only) */
+.card:hover .button-container {
+  display: flex; /* Show buttons on hover */
+}
+
+/* Ensure desktop buttons are not shown in mobile or tablet view */
+@media (max-width: 768px) {
+  /* Hide desktop buttons on mobile and tablet */
+  .button-container {
+    display: none !important; /* Force hide on smaller screens */
+  }
+
+  .card-body {
+    padding: 15px; /* Add padding for mobile */
+  }
+
+  /* Mobile view: 3-dot button (Upper Right) */
+  .dropdown.d-lg-none {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+/* Add button container: Aligns the add button to the right on mobile */
+.addbutton-container {
+  display: flex; /* Use flexbox to position the button */
+  justify-content: flex-end; /* Align the button to the right side */
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+/* searchdropdown */
+/* Increase z-index to ensure dropdown is above other content */
+/* Ensure the dropdown is displayed properly */
+.combo-box-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%; /* Ensure the dropdown spans the full width */
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for each dropdown item */
+.combo-box-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+  width: 100%; /* Ensure each item is full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.combo-box-dropdown div:hover {
+  background-color: #f0f0f0;
+}
+
+/* Form and input styling */
+.form-floating {
+  position: relative;
+  width: 100%; /* Ensure the form is full width */
+}
+
+#userRoleSearch {
+  position: relative;
+  width: 100%; /* Make sure the input is full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+
+
+
+
+
+
+
+
+
+.combo-box-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: white;
+  z-index: 1;
+  display: none; /* Hidden by default */
+}
+
+.combo-box-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.combo-box-dropdown div:hover {
+  background-color: #f0f0f0;
+}

@@ -1,0 +1,78 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+// Form validation logic
+function validateForm(event) {
+  var form = document.querySelector('.needs-validation');
+  if (!form.checkValidity()) {
+    event.preventDefault();
+    event.stopPropagation();
+    form.classList.add('was-validated');
+  }
+}
+
+
+$(document).ready(function() {
+  // Apply Select2 to the select element
+  $('#parentSelect').select2({
+    placeholder: "Select or type a parent",  // Placeholder text
+    allowClear: true                       // Allow clearing the selection
+  });
+});
+
+
+//searchdropdown
+
+
+// Filter and show matching roles as the user types
+function filterUserRole() {
+  const input = document.getElementById("userRoleSearch");
+  const dropdown = document.getElementById("userRoleDropdown");
+  const filter = input.value.toLowerCase();
+
+  // Clear previous suggestions
+  dropdown.innerHTML = "";
+
+  // Only show dropdown if there's text input
+  if (filter) {const userRoleSearch = document.getElementById('userRoleSearch');
+    const userRoleDropdown = document.getElementById('userRoleDropdown');
+    
+    const userRoles = [
+      'User Role One',
+      'User Role Two',
+      'User Role Three',
+      'User Role Four',
+      'User Role Five'
+    ];
+  }
+    // Function to display dropdown based on search
+    userRoleSearch.addEventListener('input', function() {
+      const searchQuery = userRoleSearch.value.toLowerCase();
+      userRoleDropdown.innerHTML = ''; // Clear existing options
+      if (searchQuery) {
+        const filteredRoles = userRoles.filter(role => role.toLowerCase().includes(searchQuery));
+        if (filteredRoles.length > 0) {
+          userRoleDropdown.style.display = 'block'; // Show the dropdown
+          filteredRoles.forEach(role => {
+            const div = document.createElement('div');
+            div.textContent = role;
+            div.addEventListener('click', () => {
+              userRoleSearch.value = role;  // Set the selected role
+              userRoleDropdown.style.display = 'none';  // Hide the dropdown after selection
+            });
+            userRoleDropdown.appendChild(div);
+          });
+        } else {
+          userRoleDropdown.style.display = 'none';  // No matches, hide dropdown
+        }
+      } else {
+        userRoleDropdown.style.display = 'none';  // Hide dropdown if input is empty
+      }
+    });
+    
+    // Close dropdown if clicked outside
+    document.addEventListener('click', function(event) {
+      if (!userRoleSearch.contains(event.target)) {
+        userRoleDropdown.style.display = 'none';
+      }
+    })};
