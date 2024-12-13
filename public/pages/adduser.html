@@ -532,6 +532,20 @@
         <div class="invalid-feedback">Please enter a valid phone number (e.g., (123)-456-7890).</div>
       </div>
 
+      <!-- Address Line 1 -->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="AddressLine1Input" type="text" placeholder="Enter the full name of the entity" required />
+        <label for="AddressLine1Input">Address Line 1</label>
+        <div class="invalid-feedback">Please enter Address Line 1.</div>
+      </div>
+
+      <!-- Address Line 2 -->
+      <div class="form-floating mb-3">
+        <input class="form-control" id="AddressLine2Input" type="text" placeholder="Enter the full name of the entity" required />
+        <label for="AddressLine2Input">Address Line 2</label>
+        <div class="invalid-feedback">Please enter Address Line 2.</div>
+      </div>
+
       <!-- City Search -->
       <div class="form-floating mb-3">
         <input class="form-control" id="citySearch" list="cityList" placeholder="Start typing a city..." required />
@@ -555,7 +569,12 @@
         </datalist>
         <div class="invalid-feedback">Please select a state.</div>
       </div>
-
+        <!-- Zip Code -->
+        <div class="form-floating mb-3">
+          <input class="form-control" id="zipInput" type="text" placeholder="(123)-456-7890" pattern="\d{5}" required />
+          <label for="zipInput">Zip Code</label>
+          <div class="invalid-feedback">Please enter a 5-digit Zip Code (e.g., 12345).</div>
+        </div>
       <!-- Parent Search -->
       <div class="form-floating mb-3">
         <input class="form-control" id="parentSearch" list="parentList" placeholder="Start typing a parent..." required />
@@ -570,12 +589,12 @@
 
       <!-- User Role Search -->
       <div class="form-floating mb-3">
-        <input class="form-control" id="userRoleSearch" list="parentList" placeholder="Start typing a parent..." required />
+        <input class="form-control" id="userRoleSearch" list="userRoleList" placeholder="Start typing a parent..." required />
         <label for="userRoleSearch">User Role</label>
-        <datalist id="parentList">
-          <option value="User Role"></option>
-          <option value="User Role"></option>
-          <option value="User Role"></option>
+        <datalist id="userRoleList">
+          <option value="User Role 1"></option>
+          <option value="User Role 2"></option>
+          <option value="User Role 3"></option>
         </datalist>
         <div class="invalid-feedback">Please select a parent.</div>
       </div>
