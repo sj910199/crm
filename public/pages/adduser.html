@@ -526,11 +526,16 @@
       </div>
 
       <!-- Phone -->
+     
+      
       <div class="form-floating mb-3">
-        <input class="form-control" id="phoneInput" type="text" placeholder="(123)-456-7890" pattern="\(\d{3}\)-\d{3}-\d{4}" required />
-        <label for="phoneInput">Phone Number</label>
-        <div class="invalid-feedback">Please enter a valid phone number (e.g., (123)-456-7890).</div>
+        <input class="form-control"  id="phoneInput" type="tel" name="phone" placeholder="(12)-123-1456" required maxlength="15" />
+        <label for="phone">Phone Number</label>
+        <div class="invalid-feedback">
+          Please enter a valid phone number (e.g., (123)-456-7890).
+        </div>
       </div>
+      
 
       <!-- Address Line 1 -->
       <div class="form-floating mb-3">

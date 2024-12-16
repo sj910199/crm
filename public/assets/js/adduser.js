@@ -1,4 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 
 
 // Form validation logic
@@ -76,3 +76,28 @@ function filterUserRole() {
         userRoleDropdown.style.display = 'none';
       }
     })};
+
+
+
+
+
+
+
+
+    ////////phone number
+    document.addEventListener('DOMContentLoaded', function() {
+      const phoneInput = document.getElementById('phoneInput');
+    
+      phoneInput.addEventListener('input', function(e) {
+        let input = e.target.value.replace(/\D/g, '');  // Remove all non-digit characters
+    
+        // Format input based on the number of digits entered
+        if (input.length > 3 && input.length <= 6) {
+          input = `(${input.slice(0, 3)}) -${input.slice(3)}`;
+        } else if (input.length > 6) {
+          input = `(${input.slice(0, 3)}) -${input.slice(3, 6)}-${input.slice(6, 10)}`;
+        }
+    
+        e.target.value = input;  // Update the input field with the formatted value
+      });
+    });
