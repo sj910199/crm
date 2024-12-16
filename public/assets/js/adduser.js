@@ -79,11 +79,6 @@ function filterUserRole() {
 
 
 
-
-
-
-
-
     ////////phone number
     document.addEventListener('DOMContentLoaded', function() {
       const phoneInput = document.getElementById('phoneInput');
