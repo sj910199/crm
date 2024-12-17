@@ -12,18 +12,9 @@ function validateForm(event) {
 }
 
 
-$(document).ready(function() {
-  // Apply Select2 to the select element
-  $('#parentSelect').select2({
-    placeholder: "Select or type a parent",  // Placeholder text
-    allowClear: true                       // Allow clearing the selection
-  });
-});
 
 
 //searchdropdown
-
-
 // Filter and show matching roles as the user types
 function filterUserRole() {
   const input = document.getElementById("userRoleSearch");
@@ -96,3 +87,16 @@ function filterUserRole() {
         e.target.value = input;  // Update the input field with the formatted value
       });
     });
+
+
+
+
+    ///Project List Page
+    const scrollSpy = new bootstrap.ScrollSpy(document.body, {
+      target: '#list-example'
+    })
+
+    ///carousel
+    const carousel = new bootstrap.Carousel('#carouselExampleCaptions')
+
+    <

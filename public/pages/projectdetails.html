@@ -38,6 +38,15 @@
     <link href="../assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
     <link href="../assets/css/user.css" rel="stylesheet" id="user-style-default">
     <link href="../assets/css/entitieslist.css" rel="stylesheet" id="user-style-default">
+
+ <!-- ===============================================-->
+    <!--    Multiple Select-->
+    <!-- ===============================================-->
+    <script src="vendors/select2/select2.min.css"></script>
+    <script src="vendors/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css"></script>
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/select2/select2.min.js"></script>
+    <script src="vendors/select2/select2.full.min.js"></script>
 <!-- ===============================================-->
     <!--    javascripts-->
     <!-- ===============================================-->
@@ -345,161 +354,289 @@
   </ul>
 </nav>
 
+<!-- Apps -->
+<div class="d-flex justify-content-end">
+    <div class="btn-group mb-2 mb-md-0">
+      <button class="btn btn-primary btn-md dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Applications</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-comments me-2"></i>Chat
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-envelope me-2"></i>Email
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-calendar-alt me-2"></i>Calendar
+        </a>
+       
+      </div>
+    </div>
+  </div>
+  
+  
+<!-- List Content -->
+<div class="content">
+  <div class="row">
+                <div class="col-3">
+                  <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">Project Overview</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">Entities</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">Items</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">Team & Tasks</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-5">Income</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-6">Expenses</a>
 
 
-        <div class="content">
-        
-          <div class="addbutton-container">
-            <button class="btn btn-falcon-default me-1 mb-1" type="button">
-              <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span> Add User
-            </button>
-            </div>
-            <div class="card mb-3">
-              <div class="card-body position-relative">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <h3> P-1001</h3>
-                    <p class="mt-2">
-                       
-                        Office Renovation<br>
-                        456 Oak St, Suite 2B, Houston, TX 77002<br>
-                        John Doe Interiors<br>
-                       <strong> <img src="https://img.icons8.com/?size=100&id=85913&format=png&color=FAB005" alt="In Progress" style="width: 16px; height: 16px; vertical-align: middle;">
-                        <span style="font-size: 14px; color: #333; margin-left: 8px;">In Progress</span></strong>
-
-                    </p>
-            
-                    <!-- Mobile view: 3-dot button (Upper Right) -->
-                    <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
-                        <button class="btn btn-falcon-default me-1 mb-1" type="button">View
-                        </button>
-                    </div>
-            
-                    <!-- Desktop view: buttons visible on hover -->
-                    <div class="button-container">
-                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">View</button>
-                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          
-              <div class="card mb-3">
-                <div class="card-body position-relative">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <h3> P-1002</h3>
-                      <p class="mt-2">
-                         
-                       
-                        Residential Remodel<br>
-                       789 Maple Ave, Apt 101, Chicago, IL 60614<br>
-                        Smith & Co. Construction<br>
-                     
+                <div class="col-9">
+                  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <h4 id="list-item-1"></h4>
+                    <div class="container">
+                        <div class="row">
+                          <!-- Left column (card) -->
+                          <div class="col-md-6">
+                            <div class="card mb-3">
+                              <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
+                              </div> <!--/.bg-holder-->
+                              <div class="card-body position-relative">
+                                <h3>Project Alpha</h3>
+                                <p class="mt-2">
+                                  In Progress<br>
+                                  High<br>
+                                  WO12345<br>
+                                  Start Date: 2024-12-01<br>
+                                  Due Date: 2024-12-15<br>
+                                  Completion Date: -<br>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Right column (carousel) -->
+                          <div class="col-md-6">
+                            <div class="carousel slide position-relative" id="carouselExampleCaptions" data-bs-ride="carousel">
+                              
+                              <!-- Button positioned in the top-right corner -->
+                                <button class="btn btn-falcon-default btn-sm position-absolute top-0 end-0 m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false"><span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add</button>
+                                <div class="dropdown-menu py-0">
+                                  <div class="card shadow-none border-0" style="width: 22rem;">
+                                    <div class="card-body">
+                                      <div class="row text-start justify-content-between align-items-center mb-2">
+                                      </div>
+                                      <form>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlInput1">Email address</label>
+                                            <input class="form-control" id="exampleFormControlInput1" type="email" placeholder="name@example.com" />
+                                          </div>
+                                          <div class="mb-3">
+                                            <label class="form-label" for="exampleFormControlTextarea1">Comment</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                          </div>
+            
+                                      </form>
+                                      
+                                     
+                                    </div>
+                                  </div>
+                                </div>
+                              
+
+
+
+
+
+                              
+
+                              <div class="carousel-indicators">
+                                <button class="active" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                              </div>
+                              
+                              <div class="carousel-inner rounded-1" data-bs-theme="light">
+                                <div class="carousel-item active">
+                                  <img class="d-block w-100" src="../assets/img/generic/infobg.jpg" alt="First slide" />
+                                  <div class="carousel-caption d-block">
+                                    <h5 class="text-white">First Slide Heading</h5>
+                                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="../assets/img/generic/infobg.jpg" alt="First slide" />
+                                    <div class="carousel-caption d-block">
+                                      <h5 class="text-white">First Slide Heading</h5>
+                                      <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="../assets/img/generic/infobg.jpg" alt="First slide" />
+                                    <div class="carousel-caption d-block">
+                                      <h5 class="text-dark">First Slide Heading</h5>
+                                      <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                      </p>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
                           
-                         <strong> <img src="https://img.icons8.com/?size=100&id=60362&format=png&color=40C057" alt="In Progress" style="width: 16px; height: 16px; vertical-align: middle;">
-                          <span style="font-size: 14px; color: #333; margin-left: 8px;"> Completed</span></strong>
-  
-                      </p>
-              
-                      <!-- Mobile view: 3-dot button (Upper Right) -->
-                      <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
-                          <button class="btn btn-falcon-default me-1 mb-1" type="button">View
-                          </button>
-                      </div>
-              
-                      <!-- Desktop view: buttons visible on hover -->
-                      <div class="button-container">
-                        <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">View</button>
-                      </div>
+                          
                     </div>
-                  </div>
+                    <h4 id="list-item-2">Entities</h4>
+                    <div class="table-responsive scrollbar">
+                        <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name</th>
+                              <th scope="col">Role</th>
+                              <th scope="col">Email</th>
+                              <th scope="col">Phone</th>
+                              <th scope="col">Updates
+                                
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="hover-actions-trigger">
+                              <td class="align-middle text-nowrap">
+                                <div class="d-flex align-items-center">
+                                  <div class="avatar avatar-xl">
+                                    <img class="rounded-circle" src="../assets/img/team/4.jpg" alt="" />
+                                  </div>
+                                  <div class="ms-2">Ricky Antony</div>
+                                </div>
+                              </td>
+                              <td class="align-middle text-nowrap">Customer</td>
+                             
+                              <td class="align-middle text-nowrap"> ricky@example.com</td>
+                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
+                              <td class="align-middle text-nowrap">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
+                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
+                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
+                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
+                                  </div>
+                            </td>
+                              <td class="w-auto">
+                                <div class="btn-group btn-group hover-actions end-0 me-4">
+                                  <button class="btn btn-tertiary pe-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit"></span></button>
+                                  <button class="btn btn-tertiary ps-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times"></span></button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr class="hover-actions-trigger">
+                              <td class="align-middle text-nowrap">
+                                <div class="d-flex align-items-center">
+                                  <div class="avatar avatar-xl">
+                                    <img class="rounded-circle" src="../assets/img/team/13.jpg" alt="" />
+                                  </div>
+                                  <div class="ms-2">Emma Watson</div>
+                                </div>
+                              </td>
+                              <td class="align-middle text-nowrap">Customer</td>
+                             
+                              <td class="align-middle text-nowrap"> ricky@example.com</td>
+                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
+                              <td class="align-middle text-nowrap">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
+                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
+                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
+                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
+                                  </div>
+                            </td>
+                            </tr>
+                            <tr class="hover-actions-trigger">
+                              <td class="align-middle text-nowrap">
+                                <div class="d-flex align-items-center">
+                                  <div class="avatar avatar-xl">
+                                    <img class="rounded-circle" src="../assets/img/team/2.jpg" alt="" />
+                                  </div>
+                                  <div class="ms-2">Antony Hopkins</div>
+                                </div>
+                              </td>
+                           
+                              <td class="align-middle text-nowrap">Customer</td>
+                             
+                              <td class="align-middle text-nowrap"> ricky@example.com</td>
+                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
+                              <td class="align-middle text-nowrap">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
+                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
+                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
+                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
+                                  </div>
+                            </td>
+                            </tr>
+                            <tr class="hover-actions-trigger">
+                              <td class="align-middle text-nowrap">
+                                <div class="d-flex align-items-center">
+                                  <div class="avatar avatar-xl">
+                                    <img class="rounded-circle" src="../assets/img/team/3.jpg" alt="" />
+                                  </div>
+                                  <div class="ms-2">Jennifer Schramm</div>
+                                </div>
+                              </td>
+                              <td class="align-middle text-nowrap">Customer</td>
+                             
+                              <td class="align-middle text-nowrap"> ricky@example.com</td>
+                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
+                              <td class="align-middle text-nowrap">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
+                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
+                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
+                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
+                                  </div>
+                            </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                    <h4 id="list-item-3">Items</h4>
+                    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                    <h4 id="list-item-4">Team & Tasks</h4>
+                    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                    <h4 id="list-item-5">Income</h4>
+                    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                    <h4 id="list-item-6">Expenses</h4>
+                    <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
+                
+                
+                
                 </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body position-relative">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <h3> P-1003</h3>
-                      <p class="mt-2">
-                         New Build<br>
-                         123 Pine St, Unit 5C, Denver, CO 80203<br>
-                        Evergreen Developers LLC<br>
-                         <strong> <img src="https://img.icons8.com/?size=100&id=60362&format=png&color=737373" alt="In Progress" style="width: 16px; height: 16px; vertical-align: middle;">
-                          <span style="font-size: 14px; color: #333; margin-left: 8px;">Pending Approval</span></strong>
-  
-                      </p>
-              
-                      <!-- Mobile view: 3-dot button (Upper Right) -->
-                      <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
-                          <button class="btn btn-falcon-default me-1 mb-1" type="button">View
-                          </button>
-                      </div>
-              
-                      <!-- Desktop view: buttons visible on hover -->
-                      <div class="button-container">
-                        <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">View</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body position-relative">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <h3> P-1001</h3>
-                      <p class="mt-2">
-                         
-                          Office Renovation<br>
-                          456 Oak St, Suite 2B, Houston, TX 77002<br>
-                          John Doe Interiors<br>
-                         <strong> <img src="https://img.icons8.com/?size=100&id=85913&format=png&color=FAB005" alt="In Progress" style="width: 16px; height: 16px; vertical-align: middle;">
-                          <span style="font-size: 14px; color: #333; margin-left: 8px;">In Progress</span></strong>
-  
-                      </p>
-              
-                      <!-- Mobile view: 3-dot button (Upper Right) -->
-                      <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
-                          <button class="btn btn-falcon-default me-1 mb-1" type="button">View
-                          </button>
-                      </div>
-              
-                      <!-- Desktop view: buttons visible on hover -->
-                      <div class="button-container">
-                        <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">View</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-3">
-                <div class="card-body position-relative">
-                  <div class="row">
-                    <div class="col-lg-8">
-                      <h3> P-1001</h3>
-                      <p class="mt-2">
-                         
-                          Office Renovation<br>
-                          456 Oak St, Suite 2B, Houston, TX 77002<br>
-                          John Doe Interiors<br>
-                         <strong> <img src="https://img.icons8.com/?size=100&id=85913&format=png&color=FAB005" alt="In Progress" style="width: 16px; height: 16px; vertical-align: middle;">
-                          <span style="font-size: 14px; color: #333; margin-left: 8px;">In Progress</span></strong>
-  
-                      </p>
-              
-                      <!-- Mobile view: 3-dot button (Upper Right) -->
-                      <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
-                          <button class="btn btn-falcon-default me-1 mb-1" type="button">View
-                          </button>
-                      </div>
-              
-                      <!-- Desktop view: buttons visible on hover -->
-                      <div class="button-container">
-                        <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">View</button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
            
@@ -706,6 +843,11 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
+    <script src="vendors/jquery/jquery.min.js"></script>
+    <script src="vendors/select2/select2.min.js"></script>
+    <script src="vendors/select2/select2.full.min.js"></script>
+    <script src="vendors/select2/select2.min.css"></script>
+<script src="vendors/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css"></script>
 
   </body>
 
