@@ -657,6 +657,123 @@
                       </div>
                      
 
+ 
+
+                      <h4 id="list-item-3">Items</h4>
+
+                      <div class="d-flex justify-content-end">
+                        <div class="btn-group">
+                          <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                            <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Item
+                          </button>
+                          <div class="dropdown-menu py-0">
+                            <div class="card shadow-none border-0" style="width: 22rem;">
+                              <div class="card-body">
+                                <form>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Item" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Description" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Quantity" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Price" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Add</button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="table-responsive scrollbar">
+                        <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
+                          <thead class="bg-200">
+                            <tr>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Item</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="email">Description</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Quantity</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="price">Price</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="total">Total</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="status">Status</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="actions">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- First Row: Main Content -->
+                            <tr>
+                              <td>Item 1</td>
+                              <td>Short description</td>
+                              <td>3</td>
+                              <td>$15</td>
+                              <td>$45</td>
+                              <td>Ok</td>
+                              <td>
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
+                              </td>
+                            </tr>
+                            
+                            <!-- Collapsible Row: Detailed Content with Add/Remove Picture functionality -->
+                            <tr class="collapse" id="details-1">
+                              <td colspan="7">
+                                <div class="p-3">
+                                  <p><strong>Full Description:</strong> Glass Specification: <br>
+                                    W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
+                                    Grids= NA,<br>
+                                    Spacer= N/A, OverAll Thickness= N/A,<br>
+                                    Shape= Square/Rectangular,<br>
+                                    Lead time= Standard<br>
+                                    <br>
+                                    Frame details:<br>
+                                    Frame type= N/A, Frame material= N/A,<br>
+                                    Notes=<br>
+                                    <br>
+                                    Services:<br>
+                                    DeliveryDelivery= For pick up from designated warehouse,<br>
+                                    Labor / Installation= Not included,<br>
+                                    Material/Parts= Not included,<br>
+                                    Special service notes =</p><br>
+                                  <div class="pictures-section" id="pictures-1">
+                                    <div class="picture-item mb-2">
+                                      <img src="../assets/img/generic/3.jpg" alt="Item 1 Image" class="img-fluid" style="max-width: 400px;">
+                                      <button class="btn btn-danger btn-sm remove-picture" type="button" onclick="removePicture(this)">Remove</button>
+                                    </div>
+                                  </div>
+                                  <button class="btn btn-secondary btn-sm mt-3" type="button" onclick="addPicture('pictures-1')">Add Picture</button>
+                                </div>
+                              
+                              </td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <h4 id="list-item-3">Items</h4>
 
                     <div class="d-flex justify-content-end">
@@ -738,6 +855,8 @@
                                   <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
                                 </td>
                               </td>
+                              <td class="align-middle white-space-nowrap total">
+	</td>
                             </tr>
                             <tr class="btn-reveal-trigger">
                               <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
@@ -1548,11 +1667,68 @@ Radar Chart
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
-    <script src="vendors/jquery/jquery.min.js"></script>
-    <script src="vendors/select2/select2.min.js"></script>
-    <script src="vendors/select2/select2.full.min.js"></script>
-    <script src="vendors/select2/select2.min.css"></script>
-<script src="vendors/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css"></script>
+    <script>
+ // Function to add a picture input field with preview functionality
+function addPicture(pictureSectionId) {
+  const pictureSection = document.getElementById(pictureSectionId);
+  
+  if (!pictureSection) {
+    console.error("Picture section not found");
+    return;
+  }
+
+  // Create a new div for the picture input
+  const newPictureDiv = document.createElement('div');
+  newPictureDiv.classList.add('picture-item', 'mb-2');
+
+  // Add input field and remove button
+  newPictureDiv.innerHTML = `
+    <input type="file" class="form-control mb-2" accept="image/*" onchange="previewImage(this)" />
+    <img src="" alt="Preview Image" class="img-fluid mb-2" style="display:none; max-width: 200px;" />
+    <button class="btn btn-danger btn-sm remove-picture" type="button">Remove</button>
+  `;
+
+  // Append new picture input to the section
+  pictureSection.appendChild(newPictureDiv);
+}
+
+// Function to remove the picture input field
+function removePicture(button) {
+  const pictureItem = button.parentElement;
+  if (pictureItem) {
+    pictureItem.remove();
+  } else {
+    console.error("No picture item found to remove");
+  }
+}
+
+// Function to preview the uploaded image and hide the file input
+function previewImage(input) {
+  const file = input.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = input.nextElementSibling; // Select the img element after the input
+      img.src = e.target.result;
+      img.style.display = 'block'; // Show the image
+      input.style.display = 'none'; // Hide the input after uploading
+    };
+    reader.readAsDataURL(file); // Read the file as a data URL for preview
+  }
+}
+
+// Event listener for the "Add Picture" button
+document.getElementById('add-picture-btn').addEventListener('click', function() {
+  addPicture('pictures-1');
+});
+
+// Event delegation for dynamically added remove buttons
+document.getElementById('pictures-1').addEventListener('click', function(e) {
+  if (e.target.classList.contains('remove-picture')) {
+    removePicture(e.target);
+  }
+});
+    </script>
 
   </body>
 
