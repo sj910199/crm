@@ -51,7 +51,8 @@
     <!--    javascripts-->
     <!-- ===============================================-->
     
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
@@ -715,7 +716,7 @@
                               <td>$45</td>
                               <td>Ok</td>
                               <td>
-                                <button class="btn btn-sm btn-primary" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
+                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
                               </td>
                             </tr>
                             
@@ -773,7 +774,7 @@
 
 
 
-
+<!-- 
                     <h4 id="list-item-3">Items</h4>
 
                     <div class="d-flex justify-content-end">
@@ -808,7 +809,7 @@
                         </div>
                       </div>
                     </div>
-                    
+                     -->
 
 
 
@@ -825,7 +826,7 @@
                           </select>
                         </div>
                       </div> -->
-                      <div class="table-responsive scrollbar">
+                      <!-- <div class="table-responsive scrollbar">
                         <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
                           <thead class="bg-200">
                             <tr>
@@ -926,7 +927,7 @@
                           </tbody>
                         </table>
                       </div>
-                    </div>
+                    </div> -->
 
 
 
@@ -1054,15 +1055,23 @@
 
                     <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-polar.js-->
 
-<!-- If you are not using gulp based workflow, you can find the transpiled code at: public/assets/js/theme.js-->
-<canvas class="max-w-100" id="chartjs-polar-chart" width="350"></canvas>
-Radar Chart
+                   
+                  
+                    <h1>Overview</h1>
 
-
-
-
-
-
+                    <!-- Pie Chart 1 -->
+                    <div class="chart-container">
+                      <h3>Sales Distribution</h3>
+                      <canvas id="chartjs-doughnut-chart1"></canvas>
+                    </div>
+                  
+                    <!-- Pie Chart 2 -->
+                    <div class="chart-container">
+                      <h3>Expense Categories</h3>
+                      <canvas id="chartjs-doughnut-chart2"></canvas>
+                    </div>
+                  
+                   
 
 
 
@@ -1079,170 +1088,163 @@ Radar Chart
                       <div class="col">
                         
                       </div>
-<h5> Sales Order</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
-        </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      
-    </div>
-  <h5> Payment Schedule</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
-        </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      
-    </div>
-  <h5> Invoices</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
-        </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      
-    </div>
-  <h5> Payment Received</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
-        </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      
-    </div>
+                      <h5> Sales Order</h5>
+                      <div id="tableExample" data-list='{"valueNames":["orderNumber","orderDate","projectId","itemsSold","quantity","unitPrice","taxable","nonTaxable","taxRate","taxAmount","totalAmount"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="orderNumber">SO Number</th>
+                                <th class="text-900 sort" data-sort="orderDate">Order Date</th>
+                                <th class="text-900 sort" data-sort="projectId">Project ID</th>
+                                <th class="text-900 sort" data-sort="itemsSold">Items Sold</th>
+                                <th class="text-900 sort" data-sort="quantity">Quantity</th>
+                                <th class="text-900 sort" data-sort="unitPrice">Unit Price</th>
+                                <th class="text-900 sort" data-sort="taxable">Taxable</th>
+                                <th class="text-900 sort" data-sort="nonTaxable">Non-Taxable</th>
+                                <th class="text-900 sort" data-sort="taxRate">Applied Tax Rate</th>
+                                <th class="text-900 sort" data-sort="taxAmount">Tax Amount</th>
+                                <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="orderNumber">SO12345</td>
+                                <td class="orderDate">2024-11-10</td>
+                                <td class="projectId">ProjectA</td>
+                                <td class="itemsSold">Glass Panel</td>
+                                <td class="quantity">10</td>
+                                <td class="unitPrice">$50</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="taxRate">10%</td>
+                                <td class="taxAmount">$50</td>
+                                <td class="totalAmount">$550</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <h5> Payment Schedule</h5>
+                      <div id="tableExample" data-list='{"valueNames":["milestone","amount","term","method","status","invoice","action"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="milestone">Milestone</th>
+                                <th class="text-900 sort" data-sort="amount">Amount</th>
+                                <th class="text-900 sort" data-sort="term">Term</th>
+                                <th class="text-900 sort" data-sort="method">Method</th>
+                                <th class="text-900 sort" data-sort="status">Status</th>
+                                <th class="text-900 sort" data-sort="invoice">Invoice</th>
+                                <th class="text-900 sort" data-sort="action">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="milestone">Project Start</td>
+                                <td class="amount">$1000</td>
+                                <td class="term">Net 15</td>
+                                <td class="method">Bank Transfer</td>
+                                <td class="status">Pending</td>
+                                <td class="invoice">INV002</td>
+                                <td class="action">
+                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
+                                </td>
+                              </tr>
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <h5> Invoices</h5>
+                      <div id="tableExample" data-list='{"valueNames":["invoiceNumber","soNumber","invoiceDate","dueDate","totalAmount","amountPaid","balanceDue","status"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="invoiceNumber">Invoice Number</th>
+                                <th class="text-900 sort" data-sort="soNumber">SO Number</th>
+                                <th class="text-900 sort" data-sort="invoiceDate">Invoice Date</th>
+                                <th class="text-900 sort" data-sort="dueDate">Due Date</th>
+                                <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
+                                <th class="text-900 sort" data-sort="amountPaid">Amount Paid</th>
+                                <th class="text-900 sort" data-sort="balanceDue">Balance Due</th>
+                                <th class="text-900 sort" data-sort="status">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="soNumber">SO12345</td>
+                                <td class="invoiceDate">2024-11-15</td>
+                                <td class="dueDate">2024-12-01</td>
+                                <td class="totalAmount">$550</td>
+                                <td class="amountPaid">$300</td>
+                                <td class="balanceDue">$250</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <h5> Payment Received</h5>
+                      <div id="tableExample" data-list='{"valueNames":["paymentId","invoiceNumber","paymentDate","paymentMethod","amount","bankDepositReference"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="paymentId">Payment ID</th>
+                                <th class="text-900 sort" data-sort="invoiceNumber">Invoice Number</th>
+                                <th class="text-900 sort" data-sort="paymentDate">Payment Date</th>
+                                <th class="text-900 sort" data-sort="paymentMethod">Payment Method</th>
+                                <th class="text-900 sort" data-sort="amount">Amount</th>
+                                <th class="text-900 sort" data-sort="bankDepositReference">Bank Deposit Reference</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="paymentId">PAY001</td>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="paymentDate">2024-11-20</td>
+                                <td class="paymentMethod">Bank Transfer</td>
+                                <td class="amount">$300</td>
+                                <td class="bankDepositReference">BDR12345</td>
+                              </tr>
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
+                      
     
                     <h4 id="list-item-6">Expenses</h4>
                     <div class="row align-items-center mt-3">
@@ -1250,216 +1252,192 @@ Radar Chart
                       <div class="col">
                         
                       </div>
-                    <h5> Purchase Orders</h5>
-                    <div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-                      <div class="table-responsive scrollbar">
-                        <table class="table table-bordered table-striped fs-10 mb-0">
-                          <thead class="bg-200">
-                            <tr>
-                              <th class="text-900 sort" data-sort="name">Name</th>
-                              <th class="text-900 sort" data-sort="email">Email</th>
-                              <th class="text-900 sort" data-sort="age">Age</th>
-                            </tr>
-                          </thead>
-                          <tbody class="list">
-                            <tr>
-                              <td class="name">Anna</td>
-                              <td class="email">anna@example.com</td>
-                              <td class="age">18</td>
-                            </tr>
-                            <tr>
-                              <td class="name">Homer</td>
-                              <td class="email">homer@example.com</td>
-                              <td class="age">35</td>
-                            </tr>
-                            <tr>
-                              <td class="name">Oscar</td>
-                              <td class="email">oscar@example.com</td>
-                              <td class="age">52</td>
-                            </tr>
-                            <tr>
-                              <td class="name">Emily</td>
-                              <td class="email">emily@example.com</td>
-                              <td class="age">30</td>
-                            </tr>
-                           
-                          </tbody>
-                        </table>
-                      </div>  
-                      <div class="row align-items-center mt-3">
-                        <div class="pagination d-none"></div>
-                        <div class="col">
-                          
+                      <h5> Purchase Orders</h5>
+                      <div id="tableExample" data-list='{"valueNames":["poNumber","orderDate","supplierName","itemsBought","quantity","unitPrice","taxable","nonTaxable","appliedTaxRate","taxAmount","totalAmount"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="poNumber">PO Number</th>
+                                <th class="text-900 sort" data-sort="orderDate">Order Date</th>
+                                <th class="text-900 sort" data-sort="supplierName">Supplier Name</th>
+                                <th class="text-900 sort" data-sort="itemsBought">Items Bought</th>
+                                <th class="text-900 sort" data-sort="quantity">Quantity</th>
+                                <th class="text-900 sort" data-sort="unitPrice">Unit Price</th>
+                                <th class="text-900 sort" data-sort="taxable">Taxable</th>
+                                <th class="text-900 sort" data-sort="nonTaxable">Non-Taxable</th>
+                                <th class="text-900 sort" data-sort="appliedTaxRate">Applied Tax Rate</th>
+                                <th class="text-900 sort" data-sort="taxAmount">Tax Amount</th>
+                                <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="poNumber">PO9876</td>
+                                <td class="orderDate">2024-11-12</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="itemsBought">Aluminum Frame</td>
+                                <td class="quantity">5</td>
+                                <td class="unitPrice">$100</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="appliedTaxRate">8%</td>
+                                <td class="taxAmount">$40</td>
+                                <td class="totalAmount">$540</td>
+                              </tr>
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
                         </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
+                      
                       
                       <h5> Bills</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+<div id="tableExample" data-list='{"valueNames":["billNumber","poNumber","billDate","dueDate","supplierName","totalAmount","amountPaid","balanceDue","status"],"page":5,"pagination":true}'>
   <div class="table-responsive scrollbar">
     <table class="table table-bordered table-striped fs-10 mb-0">
       <thead class="bg-200">
         <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
+          <th class="text-900 sort" data-sort="billNumber">Bill Number</th>
+          <th class="text-900 sort" data-sort="poNumber">PO Number</th>
+          <th class="text-900 sort" data-sort="billDate">Bill Date</th>
+          <th class="text-900 sort" data-sort="dueDate">Due Date</th>
+          <th class="text-900 sort" data-sort="supplierName">Supplier Name</th>
+          <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
+          <th class="text-900 sort" data-sort="amountPaid">Amount Paid</th>
+          <th class="text-900 sort" data-sort="balanceDue">Balance Due</th>
+          <th class="text-900 sort" data-sort="status">Status</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
+          <td class="billNumber">BILL123</td>
+          <td class="poNumber">PO9876</td>
+          <td class="billDate">2024-11-18</td>
+          <td class="dueDate">2024-12-05</td>
+          <td class="supplierName">SupplierX</td>
+          <td class="totalAmount">$540</td>
+          <td class="amountPaid">$200</td>
+          <td class="balanceDue">$340</td>
+          <td class="status">Partially Paid</td>
         </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
+        <!-- Add more rows as needed -->
       </tbody>
     </table>
   </div>
   <div class="row align-items-center mt-3">
     <div class="pagination d-none"></div>
     <div class="col">
-      
-    </div>            
-
-
-  <h5> Payment Made</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
-        </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      
+      <!-- Pagination or other content can be added here -->
     </div>
+  </div>
+</div>
 
-  <h5> Labor Cost Tracking</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+
+<h5>Payment Made</h5>
+<div id="tableExample" data-list='{"valueNames":["payment_id","bill_number","payment_date","payment_method","amount","bank_deposit_reference"],"page":5,"pagination":true}'>
   <div class="table-responsive scrollbar">
     <table class="table table-bordered table-striped fs-10 mb-0">
       <thead class="bg-200">
         <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
+          <th class="text-900 sort" data-sort="payment_id">Payment ID</th>
+          <th class="text-900 sort" data-sort="bill_number">Bill Number</th>
+          <th class="text-900 sort" data-sort="payment_date">Payment Date</th>
+          <th class="text-900 sort" data-sort="payment_method">Payment Method</th>
+          <th class="text-900 sort" data-sort="amount">Amount</th>
+          <th class="text-900 sort" data-sort="bank_deposit_reference">Bank Deposit Reference</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
+          <td class="payment_id">PAY002</td>
+          <td class="bill_number">BILL123</td>
+          <td class="payment_date">2024-11-25</td>
+          <td class="payment_method">Check</td>
+          <td class="amount">$200</td>
+          <td class="bank_deposit_reference">BDR67890</td>
         </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
       </tbody>
     </table>
   </div>
   <div class="row align-items-center mt-3">
     <div class="pagination d-none"></div>
     <div class="col">
-      
     </div>
+  </div>
+</div>
 
-  <h5> Mileage Cost Tracking</h5>
-<div id="tableExample" data-list='{"valueNames":["name","email","age"],"page":5,"pagination":true}'>
+
+<h5>Labor Cost Tracking</h5>
+<div id="tableExample" data-list='{"valueNames":["user","role","hours_spent","hourly_rate","total_cost"],"page":5,"pagination":true}'>
   <div class="table-responsive scrollbar">
     <table class="table table-bordered table-striped fs-10 mb-0">
       <thead class="bg-200">
         <tr>
-          <th class="text-900 sort" data-sort="name">Name</th>
-          <th class="text-900 sort" data-sort="email">Email</th>
-          <th class="text-900 sort" data-sort="age">Age</th>
+          <th class="text-900 sort" data-sort="user">User</th>
+          <th class="text-900 sort" data-sort="role">Role</th>
+          <th class="text-900 sort" data-sort="hours_spent">Hours Spent</th>
+          <th class="text-900 sort" data-sort="hourly_rate">Hourly Rate</th>
+          <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
         </tr>
       </thead>
       <tbody class="list">
         <tr>
-          <td class="name">Anna</td>
-          <td class="email">anna@example.com</td>
-          <td class="age">18</td>
+          <td class="user">John Doe</td>
+          <td class="role">Technician</td>
+          <td class="hours_spent">20</td>
+          <td class="hourly_rate">$50</td>
+          <td class="total_cost">$1000</td>
         </tr>
-        <tr>
-          <td class="name">Homer</td>
-          <td class="email">homer@example.com</td>
-          <td class="age">35</td>
-        </tr>
-        <tr>
-          <td class="name">Oscar</td>
-          <td class="email">oscar@example.com</td>
-          <td class="age">52</td>
-        </tr>
-        <tr>
-          <td class="name">Emily</td>
-          <td class="email">emily@example.com</td>
-          <td class="age">30</td>
-        </tr>
-       
       </tbody>
     </table>
   </div>
   <div class="row align-items-center mt-3">
     <div class="pagination d-none"></div>
     <div class="col">
-      
     </div>
+  </div>
+</div>
+
+<h5>Mileage Cost Tracking</h5>
+<div id="tableExample" data-list='{"valueNames":["user","start_location","end_location","miles_driven","rate_per_mile","total_cost"],"page":5,"pagination":true}'>
+  <div class="table-responsive scrollbar">
+    <table class="table table-bordered table-striped fs-10 mb-0">
+      <thead class="bg-200">
+        <tr>
+          <th class="text-900 sort" data-sort="user">User</th>
+          <th class="text-900 sort" data-sort="start_location">Start Location</th>
+          <th class="text-900 sort" data-sort="end_location">End Location</th>
+          <th class="text-900 sort" data-sort="miles_driven">Miles Driven</th>
+          <th class="text-900 sort" data-sort="rate_per_mile">Rate per Mile</th>
+          <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
+        </tr>
+      </thead>
+      <tbody class="list">
+        <tr>
+          <td class="user">Jane Smith</td>
+          <td class="start_location">Office</td>
+          <td class="end_location">Project Site A</td>
+          <td class="miles_driven">50</td>
+          <td class="rate_per_mile">$0.58</td>
+          <td class="total_cost">$29</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row align-items-center mt-3">
+    <div class="pagination d-none"></div>
+    <div class="col">
+    </div>
+  </div>
+</div>
+
                 </div>
                 </div>
               </div>
@@ -1668,6 +1646,9 @@ Radar Chart
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
     <script>
+
+
+// items section:details
  // Function to add a picture input field with preview functionality
 function addPicture(pictureSectionId) {
   const pictureSection = document.getElementById(pictureSectionId);
@@ -1729,6 +1710,67 @@ document.getElementById('pictures-1').addEventListener('click', function(e) {
   }
 });
     </script>
+
+
+<!-- 4 charts -->
+
+<script>
+  // Pie Chart 1: Sales Distribution
+  new Chart(document.getElementById('chartjs-doughnut-chart1').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: ['Product A', 'Product B', 'Product C'],
+      datasets: [{
+        data: [40, 30, 30],
+        backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'],
+        borderWidth: 1
+      }]
+    }
+  });
+
+  // Pie Chart 2: Expense Categories
+  new Chart(document.getElementById('chartjs-doughnut-chart2').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: ['Salaries', 'Materials', 'Overhead'],
+      datasets: [{
+        data: [50, 30, 20],
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(255, 159, 64, 0.2)', 'rgba(255, 205, 86, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(255, 159, 64, 1)', 'rgba(255, 205, 86, 1)'],
+        borderWidth: 1
+      }]
+    }
+  });
+
+  // Pie Chart 3: Payment Methods
+  new Chart(document.getElementById('chartjs-doughnut-chart3').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: ['Credit Card', 'Bank Transfer', 'Cash'],
+      datasets: [{
+        data: [50, 30, 20],
+        backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+        borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+        borderWidth: 1
+      }]
+    }
+  });
+
+  // Pie Chart 4: Invoice Status
+  new Chart(document.getElementById('chartjs-doughnut-chart4').getContext('2d'), {
+    type: 'pie',
+    data: {
+      labels: ['Paid', 'Unpaid', 'Partially Paid'],
+      datasets: [{
+        data: [60, 30, 10],
+        backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(75, 192, 192, 0.2)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)'],
+        borderWidth: 1
+      }]
+    }
+  });
+</script>
 
   </body>
 
