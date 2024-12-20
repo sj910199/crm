@@ -42,11 +42,9 @@
  <!-- ===============================================-->
     <!--    Multiple Select-->
     <!-- ===============================================-->
-    <script src="vendors/select2/select2.min.css"></script>
-    <script src="vendors/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css"></script>
-    <script src="vendors/jquery/jquery.min.js"></script>
-    <script src="vendors/select2/select2.min.js"></script>
-    <script src="vendors/select2/select2.full.min.js"></script>
+    <link href="../vendors/select2/select2.min.css" rel="stylesheet">
+    <link href="../vendors/select2-bootstrap-5-theme/select2-bootstrap-5-theme.min.css" rel="stylesheet">
+    
 <!-- ===============================================-->
     <!--    javascripts-->
     <!-- ===============================================-->
@@ -376,21 +374,56 @@
   
   
 <!-- List Content -->
-<div class="content">
-  <div class="row">
-                <div class="col-3">
-                  <div id="list-example" class="list-group">
-                    <a class="list-group-item list-group-item-action" href="#list-item-1">Project Overview</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-2">Entities</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-3">Items</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-4">Team & Tasks</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-5">Income</a>
-                    <a class="list-group-item list-group-item-action" href="#list-item-6">Expenses</a>
 
+                <div class="content">
+                  <div class="row">
+                    <!-- For mobile, display the list horizontally -->
+                        <div class="col-3 d-block d-md-none">
+                          <div class="list-group d-flex flex-row justify-content-start ">
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-1">
+                              <img src="https://img.icons8.com/?size=100&id=11733&format=png&color=5D78E8" alt="Project Overview Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                              
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-2">
+                              <img src="https://img.icons8.com/?size=100&id=82751&format=png&color=5D78E8" alt="Entities Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                              
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-3">
+                              <img src="https://img.icons8.com/?size=100&id=774&format=png&color=5D78E8" alt="Items Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                            
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-4">
+                              <img src="https://img.icons8.com/?size=100&id=87209&format=png&color=5D78E8" alt="Team & Tasks Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                            
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-5">
+                              <img src="https://img.icons8.com/?size=100&id=35072&format=png&color=5D78E8" alt="Income Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                              
+                            </a>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center" href="#list-item-6">
+                              <img src="https://img.icons8.com/?size=100&id=32730&format=png&color=5D78E8" alt="Expenses Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                              
+                            </a>
+                          </div>
+                        </div>
 
-                  </div>
-                </div>
-                <div class="col-9">
+                        <!-- For desktop, display the list horizontally -->
+                        <div class="col-12 d-none d-md-block">
+                          <div id="list-example" class="list-group d-flex flex-row justify-content-start fixed-bottom">
+                            <a class="list-group-item list-group-item-action" href="#list-item-1">Project Overview</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-2">Entities</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-3">Items</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-4">Team & Tasks</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-5">Income</a>
+                            <a class="list-group-item list-group-item-action" href="#list-item-6">Expenses</a>
+                          </div>
+                        </div>
+
+               
+                
+                 
+                
+                <div class="col-12">
                   <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
                     <h4 id="list-item-1"></h4>
                     <div class="container">
@@ -484,9 +517,23 @@
                               </div>
                             </div>
                           </div>
+                    
+     
+                        </div>
+
+                        
+
+
+
+
+
+
+
+
                           
                           
-                    </div>
+                   
+
                     <h4 id="list-item-2">Entities</h4>
                     <div class="dropdown font-sans-serif mb-1 d-flex justify-content-end">
                       <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
@@ -529,7 +576,17 @@
                               <td class="align-middle text-nowrap"> ricky@example.com</td>
                               <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
                               <td class="align-middle text-nowrap">
-                                <div class="form-check form-check-inline">
+
+                                <div class="form-group">
+                                  <label for="multiple-select">Select options</label>
+                                  <select class="form-select selectpicker" id="multiple-select1" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                    <option>Personal Update</option>
+                                    <option>Scheduling Update</option>
+                                    <option>Invoice Update</option>
+                                  </select>
+                                </div>
+        
+                                <!-- <div class="form-check form-check-inline">
                                     <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
                                     <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
                                   </div>
@@ -540,7 +597,7 @@
                                   <div class="form-check form-check-inline">
                                     <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
                                     <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
-                                  </div>
+                                  </div> -->
                             </td>
                               <td class="w-auto">
                                 <div class="btn-group btn-group hover-actions end-0 me-4">
@@ -563,18 +620,14 @@
                               <td class="align-middle text-nowrap"> ricky@example.com</td>
                               <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
                               <td class="align-middle text-nowrap">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
-                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
-                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
-                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
-                                  </div>
+                                <div class="form-group">
+                                  <label for="multiple-select">Select options</label>
+                                  <select class="form-select selectpicker" id="multiple-select2" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                    <option>Personal Update</option>
+                                    <option>Scheduling Update</option>
+                                    <option>Invoice Update</option>
+                                  </select>
+                                </div>
                             </td>
                             <td class="w-auto">
                               <div class="btn-group btn-group hover-actions end-0 me-4">
@@ -598,18 +651,14 @@
                               <td class="align-middle text-nowrap"> ricky@example.com</td>
                               <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
                               <td class="align-middle text-nowrap">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
-                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
-                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
-                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
-                                  </div>
+                                <div class="form-group">
+                                  <label for="multiple-select">Select options</label>
+                                  <select class="form-select selectpicker" id="multiple-select3" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                    <option>Personal Update</option>
+                                    <option>Scheduling Update</option>
+                                    <option>Invoice Update</option>
+                                  </select>
+                                </div>
                             </td>
                             <td class="w-auto">
                               <div class="btn-group btn-group hover-actions end-0 me-4">
@@ -632,18 +681,14 @@
                               <td class="align-middle text-nowrap"> ricky@example.com</td>
                               <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
                               <td class="align-middle text-nowrap">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
-                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
-                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
-                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
-                                  </div>
+                                <div class="form-group">
+                                  <label for="multiple-select">Select options</label>
+                                  <select class="form-select selectpicker" id="multiple-select4" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                    <option>Personal Update</option>
+                                    <option>Scheduling Update</option>
+                                    <option>Invoice Update</option>
+                                  </select>
+                                </div>
                             </td>
                             <td class="w-auto">
                               <div class="btn-group btn-group hover-actions end-0 me-4">
@@ -672,17 +717,27 @@
                               <div class="card-body">
                                 <form>
                                   <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Item" />
-                                  </div>
-                                  <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Description" />
-                                  </div>
-                                  <div class="mb-3">
                                     <input class="form-control" type="text" placeholder="Quantity" />
                                   </div>
                                   <div class="mb-3">
-                                    <input class="form-control" type="text" placeholder="Price" />
+                                    <input class="form-control" type="text" placeholder="Number" />
                                   </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Details" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Taxable" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Status" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Vandor" />
+                                  </div>
+                                  <div class="mb-3">
+                                    <input class="form-control" type="text" placeholder="Other Details" />
+                                  </div>
+
                                   <div class="mb-3">
                                     <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Add</button>
                                   </div>
@@ -697,12 +752,14 @@
                         <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
                           <thead class="bg-200">
                             <tr>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Item</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="email">Description</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Quantity</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="price">Price</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="total">Total</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="status">Status</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Quntity</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="email">Number</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Details</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Taxable</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Status</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Vandor</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="price">More Information</th>
+                              
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="actions">Actions</th>
                             </tr>
                           </thead>
@@ -710,10 +767,11 @@
                             <!-- First Row: Main Content -->
                             <tr>
                               <td>Item 1</td>
-                              <td>Short description</td>
+                              <td>2</td>
                               <td>3</td>
                               <td>$15</td>
                               <td>$45</td>
+                              <td>Ok</td>
                               <td>Ok</td>
                               <td>
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
@@ -751,6 +809,52 @@
                               
                               </td>
                             </tr>
+
+                              <!-- Second Row: Main Content -->
+                              <tr>
+                                <td>Item 1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>$15</td>
+                                <td>$45</td>
+                                <td>Ok</td>
+                                <td>Ok</td>
+                                <td>
+                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
+                                </td>
+                              </tr>
+                              
+                              <!-- Collapsible Row: Detailed Content with Add/Remove Picture functionality -->
+                              <tr class="collapse" id="details-1">
+                                <td colspan="7">
+                                  <div class="p-3">
+                                    <p><strong>Full Description:</strong> Glass Specification: <br>
+                                      W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
+                                      Grids= NA,<br>
+                                      Spacer= N/A, OverAll Thickness= N/A,<br>
+                                      Shape= Square/Rectangular,<br>
+                                      Lead time= Standard<br>
+                                      <br>
+                                      Frame details:<br>
+                                      Frame type= N/A, Frame material= N/A,<br>
+                                      Notes=<br>
+                                      <br>
+                                      Services:<br>
+                                      DeliveryDelivery= For pick up from designated warehouse,<br>
+                                      Labor / Installation= Not included,<br>
+                                      Material/Parts= Not included,<br>
+                                      Special service notes =</p><br>
+                                    <div class="pictures-section" id="pictures-1">
+                                      <div class="picture-item mb-2">
+                                        <img src="../assets/img/generic/3.jpg" alt="Item 1 Image" class="img-fluid" style="max-width: 400px;">
+                                        <button class="btn btn-danger btn-sm remove-picture" type="button" onclick="removePicture(this)">Remove</button>
+                                      </div>
+                                    </div>
+                                    <button class="btn btn-secondary btn-sm mt-3" type="button" onclick="addPicture('pictures-1')">Add Picture</button>
+                                  </div>
+                                
+                                </td>
+                              </tr>
                             
                           </tbody>
                         </table>
@@ -1071,16 +1175,6 @@
                       <canvas id="chartjs-doughnut-chart2"></canvas>
                     </div>
                   
-                   
-
-
-
-
-
-
-
-
-
 
                     <h4 id="list-item-5">Income</h4>
                     <div class="row align-items-center mt-3">
@@ -1108,6 +1202,45 @@
                               </tr>
                             </thead>
                             <tbody class="list">
+                              <tr>
+                                <td class="orderNumber">SO12345</td>
+                                <td class="orderDate">2024-11-10</td>
+                                <td class="projectId">ProjectA</td>
+                                <td class="itemsSold">Glass Panel</td>
+                                <td class="quantity">10</td>
+                                <td class="unitPrice">$50</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="taxRate">10%</td>
+                                <td class="taxAmount">$50</td>
+                                <td class="totalAmount">$550</td>
+                              </tr>
+                              <tr>
+                                <td class="orderNumber">SO12345</td>
+                                <td class="orderDate">2024-11-10</td>
+                                <td class="projectId">ProjectA</td>
+                                <td class="itemsSold">Glass Panel</td>
+                                <td class="quantity">10</td>
+                                <td class="unitPrice">$50</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="taxRate">10%</td>
+                                <td class="taxAmount">$50</td>
+                                <td class="totalAmount">$550</td>
+                              </tr>
+                              <tr>
+                                <td class="orderNumber">SO12345</td>
+                                <td class="orderDate">2024-11-10</td>
+                                <td class="projectId">ProjectA</td>
+                                <td class="itemsSold">Glass Panel</td>
+                                <td class="quantity">10</td>
+                                <td class="unitPrice">$50</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="taxRate">10%</td>
+                                <td class="taxAmount">$50</td>
+                                <td class="totalAmount">$550</td>
+                              </tr>
                               <tr>
                                 <td class="orderNumber">SO12345</td>
                                 <td class="orderDate">2024-11-10</td>
@@ -1159,6 +1292,39 @@
                                   <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
                                 </td>
                               </tr>
+                              <tr>
+                                <td class="milestone">Project Start</td>
+                                <td class="amount">$1000</td>
+                                <td class="term">Net 15</td>
+                                <td class="method">Bank Transfer</td>
+                                <td class="status">Pending</td>
+                                <td class="invoice">INV002</td>
+                                <td class="action">
+                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="milestone">Project Start</td>
+                                <td class="amount">$1000</td>
+                                <td class="term">Net 15</td>
+                                <td class="method">Bank Transfer</td>
+                                <td class="status">Pending</td>
+                                <td class="invoice">INV002</td>
+                                <td class="action">
+                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="milestone">Project Start</td>
+                                <td class="amount">$1000</td>
+                                <td class="term">Net 15</td>
+                                <td class="method">Bank Transfer</td>
+                                <td class="status">Pending</td>
+                                <td class="invoice">INV002</td>
+                                <td class="action">
+                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1">Generate Invoice</button>
+                                </td>
+                              </tr>
                               <!-- Add more rows as needed -->
                             </tbody>
                           </table>
@@ -1198,6 +1364,36 @@
                                 <td class="balanceDue">$250</td>
                                 <td class="status">Partially Paid</td>
                               </tr>
+                              <tr>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="soNumber">SO12345</td>
+                                <td class="invoiceDate">2024-11-15</td>
+                                <td class="dueDate">2024-12-01</td>
+                                <td class="totalAmount">$550</td>
+                                <td class="amountPaid">$300</td>
+                                <td class="balanceDue">$250</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <tr>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="soNumber">SO12345</td>
+                                <td class="invoiceDate">2024-11-15</td>
+                                <td class="dueDate">2024-12-01</td>
+                                <td class="totalAmount">$550</td>
+                                <td class="amountPaid">$300</td>
+                                <td class="balanceDue">$250</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <tr>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="soNumber">SO12345</td>
+                                <td class="invoiceDate">2024-11-15</td>
+                                <td class="dueDate">2024-12-01</td>
+                                <td class="totalAmount">$550</td>
+                                <td class="amountPaid">$300</td>
+                                <td class="balanceDue">$250</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
                               <!-- Add more rows as needed -->
                             </tbody>
                           </table>
@@ -1225,6 +1421,30 @@
                               </tr>
                             </thead>
                             <tbody class="list">
+                              <tr>
+                                <td class="paymentId">PAY001</td>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="paymentDate">2024-11-20</td>
+                                <td class="paymentMethod">Bank Transfer</td>
+                                <td class="amount">$300</td>
+                                <td class="bankDepositReference">BDR12345</td>
+                              </tr>
+                              <tr>
+                                <td class="paymentId">PAY001</td>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="paymentDate">2024-11-20</td>
+                                <td class="paymentMethod">Bank Transfer</td>
+                                <td class="amount">$300</td>
+                                <td class="bankDepositReference">BDR12345</td>
+                              </tr>
+                              <tr>
+                                <td class="paymentId">PAY001</td>
+                                <td class="invoiceNumber">INV001</td>
+                                <td class="paymentDate">2024-11-20</td>
+                                <td class="paymentMethod">Bank Transfer</td>
+                                <td class="amount">$300</td>
+                                <td class="bankDepositReference">BDR12345</td>
+                              </tr>
                               <tr>
                                 <td class="paymentId">PAY001</td>
                                 <td class="invoiceNumber">INV001</td>
@@ -1285,6 +1505,45 @@
                                 <td class="taxAmount">$40</td>
                                 <td class="totalAmount">$540</td>
                               </tr>
+                              <tr>
+                                <td class="poNumber">PO9876</td>
+                                <td class="orderDate">2024-11-12</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="itemsBought">Aluminum Frame</td>
+                                <td class="quantity">5</td>
+                                <td class="unitPrice">$100</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="appliedTaxRate">8%</td>
+                                <td class="taxAmount">$40</td>
+                                <td class="totalAmount">$540</td>
+                              </tr>
+                              <tr>
+                                <td class="poNumber">PO9876</td>
+                                <td class="orderDate">2024-11-12</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="itemsBought">Aluminum Frame</td>
+                                <td class="quantity">5</td>
+                                <td class="unitPrice">$100</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="appliedTaxRate">8%</td>
+                                <td class="taxAmount">$40</td>
+                                <td class="totalAmount">$540</td>
+                              </tr>
+                              <tr>
+                                <td class="poNumber">PO9876</td>
+                                <td class="orderDate">2024-11-12</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="itemsBought">Aluminum Frame</td>
+                                <td class="quantity">5</td>
+                                <td class="unitPrice">$100</td>
+                                <td class="taxable">$500</td>
+                                <td class="nonTaxable">$0</td>
+                                <td class="appliedTaxRate">8%</td>
+                                <td class="taxAmount">$40</td>
+                                <td class="totalAmount">$540</td>
+                              </tr>
                               <!-- Add more rows as needed -->
                             </tbody>
                           </table>
@@ -1299,148 +1558,250 @@
                       
                       
                       <h5> Bills</h5>
-<div id="tableExample" data-list='{"valueNames":["billNumber","poNumber","billDate","dueDate","supplierName","totalAmount","amountPaid","balanceDue","status"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="billNumber">Bill Number</th>
-          <th class="text-900 sort" data-sort="poNumber">PO Number</th>
-          <th class="text-900 sort" data-sort="billDate">Bill Date</th>
-          <th class="text-900 sort" data-sort="dueDate">Due Date</th>
-          <th class="text-900 sort" data-sort="supplierName">Supplier Name</th>
-          <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
-          <th class="text-900 sort" data-sort="amountPaid">Amount Paid</th>
-          <th class="text-900 sort" data-sort="balanceDue">Balance Due</th>
-          <th class="text-900 sort" data-sort="status">Status</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="billNumber">BILL123</td>
-          <td class="poNumber">PO9876</td>
-          <td class="billDate">2024-11-18</td>
-          <td class="dueDate">2024-12-05</td>
-          <td class="supplierName">SupplierX</td>
-          <td class="totalAmount">$540</td>
-          <td class="amountPaid">$200</td>
-          <td class="balanceDue">$340</td>
-          <td class="status">Partially Paid</td>
-        </tr>
-        <!-- Add more rows as needed -->
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-      <!-- Pagination or other content can be added here -->
-    </div>
-  </div>
-</div>
+                      <div id="tableExample" data-list='{"valueNames":["billNumber","poNumber","billDate","dueDate","supplierName","totalAmount","amountPaid","balanceDue","status"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="billNumber">Bill Number</th>
+                                <th class="text-900 sort" data-sort="poNumber">PO Number</th>
+                                <th class="text-900 sort" data-sort="billDate">Bill Date</th>
+                                <th class="text-900 sort" data-sort="dueDate">Due Date</th>
+                                <th class="text-900 sort" data-sort="supplierName">Supplier Name</th>
+                                <th class="text-900 sort" data-sort="totalAmount">Total Amount</th>
+                                <th class="text-900 sort" data-sort="amountPaid">Amount Paid</th>
+                                <th class="text-900 sort" data-sort="balanceDue">Balance Due</th>
+                                <th class="text-900 sort" data-sort="status">Status</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="billNumber">BILL123</td>
+                                <td class="poNumber">PO9876</td>
+                                <td class="billDate">2024-11-18</td>
+                                <td class="dueDate">2024-12-05</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="totalAmount">$540</td>
+                                <td class="amountPaid">$200</td>
+                                <td class="balanceDue">$340</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <tr>
+                                <td class="billNumber">BILL123</td>
+                                <td class="poNumber">PO9876</td>
+                                <td class="billDate">2024-11-18</td>
+                                <td class="dueDate">2024-12-05</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="totalAmount">$540</td>
+                                <td class="amountPaid">$200</td>
+                                <td class="balanceDue">$340</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <tr>
+                                <td class="billNumber">BILL123</td>
+                                <td class="poNumber">PO9876</td>
+                                <td class="billDate">2024-11-18</td>
+                                <td class="dueDate">2024-12-05</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="totalAmount">$540</td>
+                                <td class="amountPaid">$200</td>
+                                <td class="balanceDue">$340</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <tr>
+                                <td class="billNumber">BILL123</td>
+                                <td class="poNumber">PO9876</td>
+                                <td class="billDate">2024-11-18</td>
+                                <td class="dueDate">2024-12-05</td>
+                                <td class="supplierName">SupplierX</td>
+                                <td class="totalAmount">$540</td>
+                                <td class="amountPaid">$200</td>
+                                <td class="balanceDue">$340</td>
+                                <td class="status">Partially Paid</td>
+                              </tr>
+                              <!-- Add more rows as needed -->
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                            <!-- Pagination or other content can be added here -->
+                          </div>
+                        </div>
+                      </div>
 
 
-<h5>Payment Made</h5>
-<div id="tableExample" data-list='{"valueNames":["payment_id","bill_number","payment_date","payment_method","amount","bank_deposit_reference"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="payment_id">Payment ID</th>
-          <th class="text-900 sort" data-sort="bill_number">Bill Number</th>
-          <th class="text-900 sort" data-sort="payment_date">Payment Date</th>
-          <th class="text-900 sort" data-sort="payment_method">Payment Method</th>
-          <th class="text-900 sort" data-sort="amount">Amount</th>
-          <th class="text-900 sort" data-sort="bank_deposit_reference">Bank Deposit Reference</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="payment_id">PAY002</td>
-          <td class="bill_number">BILL123</td>
-          <td class="payment_date">2024-11-25</td>
-          <td class="payment_method">Check</td>
-          <td class="amount">$200</td>
-          <td class="bank_deposit_reference">BDR67890</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-    </div>
-  </div>
-</div>
+                      <h5>Payment Made</h5>
+                      <div id="tableExample" data-list='{"valueNames":["payment_id","bill_number","payment_date","payment_method","amount","bank_deposit_reference"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="payment_id">Payment ID</th>
+                                <th class="text-900 sort" data-sort="bill_number">Bill Number</th>
+                                <th class="text-900 sort" data-sort="payment_date">Payment Date</th>
+                                <th class="text-900 sort" data-sort="payment_method">Payment Method</th>
+                                <th class="text-900 sort" data-sort="amount">Amount</th>
+                                <th class="text-900 sort" data-sort="bank_deposit_reference">Bank Deposit Reference</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="payment_id">PAY002</td>
+                                <td class="bill_number">BILL123</td>
+                                <td class="payment_date">2024-11-25</td>
+                                <td class="payment_method">Check</td>
+                                <td class="amount">$200</td>
+                                <td class="bank_deposit_reference">BDR67890</td>
+                              </tr>
+                              <tr>
+                                <td class="payment_id">PAY002</td>
+                                <td class="bill_number">BILL123</td>
+                                <td class="payment_date">2024-11-25</td>
+                                <td class="payment_method">Check</td>
+                                <td class="amount">$200</td>
+                                <td class="bank_deposit_reference">BDR67890</td>
+                              </tr>
+                              <tr>
+                                <td class="payment_id">PAY002</td>
+                                <td class="bill_number">BILL123</td>
+                                <td class="payment_date">2024-11-25</td>
+                                <td class="payment_method">Check</td>
+                                <td class="amount">$200</td>
+                                <td class="bank_deposit_reference">BDR67890</td>
+                              </tr>
+                              <tr>
+                                <td class="payment_id">PAY002</td>
+                                <td class="bill_number">BILL123</td>
+                                <td class="payment_date">2024-11-25</td>
+                                <td class="payment_method">Check</td>
+                                <td class="amount">$200</td>
+                                <td class="bank_deposit_reference">BDR67890</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>
 
 
-<h5>Labor Cost Tracking</h5>
-<div id="tableExample" data-list='{"valueNames":["user","role","hours_spent","hourly_rate","total_cost"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="user">User</th>
-          <th class="text-900 sort" data-sort="role">Role</th>
-          <th class="text-900 sort" data-sort="hours_spent">Hours Spent</th>
-          <th class="text-900 sort" data-sort="hourly_rate">Hourly Rate</th>
-          <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="user">John Doe</td>
-          <td class="role">Technician</td>
-          <td class="hours_spent">20</td>
-          <td class="hourly_rate">$50</td>
-          <td class="total_cost">$1000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-    </div>
-  </div>
-</div>
+                      <h5>Labor Cost Tracking</h5>
+                      <div id="tableExample" data-list='{"valueNames":["user","role","hours_spent","hourly_rate","total_cost"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="user">User</th>
+                                <th class="text-900 sort" data-sort="role">Role</th>
+                                <th class="text-900 sort" data-sort="hours_spent">Hours Spent</th>
+                                <th class="text-900 sort" data-sort="hourly_rate">Hourly Rate</th>
+                                <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="user">John Doe</td>
+                                <td class="role">Technician</td>
+                                <td class="hours_spent">20</td>
+                                <td class="hourly_rate">$50</td>
+                                <td class="total_cost">$1000</td>
+                              </tr>
+                              <tr>
+                                <td class="user">John Doe</td>
+                                <td class="role">Technician</td>
+                                <td class="hours_spent">20</td>
+                                <td class="hourly_rate">$50</td>
+                                <td class="total_cost">$1000</td>
+                              </tr>
+                              <tr>
+                                <td class="user">John Doe</td>
+                                <td class="role">Technician</td>
+                                <td class="hours_spent">20</td>
+                                <td class="hourly_rate">$50</td>
+                                <td class="total_cost">$1000</td>
+                              </tr>
+                              <tr>
+                                <td class="user">John Doe</td>
+                                <td class="role">Technician</td>
+                                <td class="hours_spent">20</td>
+                                <td class="hourly_rate">$50</td>
+                                <td class="total_cost">$1000</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>
 
-<h5>Mileage Cost Tracking</h5>
-<div id="tableExample" data-list='{"valueNames":["user","start_location","end_location","miles_driven","rate_per_mile","total_cost"],"page":5,"pagination":true}'>
-  <div class="table-responsive scrollbar">
-    <table class="table table-bordered table-striped fs-10 mb-0">
-      <thead class="bg-200">
-        <tr>
-          <th class="text-900 sort" data-sort="user">User</th>
-          <th class="text-900 sort" data-sort="start_location">Start Location</th>
-          <th class="text-900 sort" data-sort="end_location">End Location</th>
-          <th class="text-900 sort" data-sort="miles_driven">Miles Driven</th>
-          <th class="text-900 sort" data-sort="rate_per_mile">Rate per Mile</th>
-          <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        <tr>
-          <td class="user">Jane Smith</td>
-          <td class="start_location">Office</td>
-          <td class="end_location">Project Site A</td>
-          <td class="miles_driven">50</td>
-          <td class="rate_per_mile">$0.58</td>
-          <td class="total_cost">$29</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="row align-items-center mt-3">
-    <div class="pagination d-none"></div>
-    <div class="col">
-    </div>
-  </div>
-</div>
+                      <h5>Mileage Cost Tracking</h5>
+                      <div id="tableExample" data-list='{"valueNames":["user","start_location","end_location","miles_driven","rate_per_mile","total_cost"],"page":5,"pagination":true}'>
+                        <div class="table-responsive scrollbar">
+                          <table class="table table-bordered table-striped fs-10 mb-0">
+                            <thead class="bg-200">
+                              <tr>
+                                <th class="text-900 sort" data-sort="user">User</th>
+                                <th class="text-900 sort" data-sort="start_location">Start Location</th>
+                                <th class="text-900 sort" data-sort="end_location">End Location</th>
+                                <th class="text-900 sort" data-sort="miles_driven">Miles Driven</th>
+                                <th class="text-900 sort" data-sort="rate_per_mile">Rate per Mile</th>
+                                <th class="text-900 sort" data-sort="total_cost">Total Cost</th>
+                              </tr>
+                            </thead>
+                            <tbody class="list">
+                              <tr>
+                                <td class="user">Jane Smith</td>
+                                <td class="start_location">Office</td>
+                                <td class="end_location">Project Site A</td>
+                                <td class="miles_driven">50</td>
+                                <td class="rate_per_mile">$0.58</td>
+                                <td class="total_cost">$29</td>
+                              </tr>
+                              <tr>
+                                <td class="user">Jane Smith</td>
+                                <td class="start_location">Office</td>
+                                <td class="end_location">Project Site A</td>
+                                <td class="miles_driven">50</td>
+                                <td class="rate_per_mile">$0.58</td>
+                                <td class="total_cost">$29</td>
+                              </tr>
+                              <tr>
+                                <td class="user">Jane Smith</td>
+                                <td class="start_location">Office</td>
+                                <td class="end_location">Project Site A</td>
+                                <td class="miles_driven">50</td>
+                                <td class="rate_per_mile">$0.58</td>
+                                <td class="total_cost">$29</td>
+                              </tr>
+                              <tr>
+                                <td class="user">Jane Smith</td>
+                                <td class="start_location">Office</td>
+                                <td class="end_location">Project Site A</td>
+                                <td class="miles_driven">50</td>
+                                <td class="rate_per_mile">$0.58</td>
+                                <td class="total_cost">$29</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                          <div class="pagination d-none"></div>
+                          <div class="col">
+                          </div>
+                        </div>
+                      </div>
 
-                </div>
-                </div>
-              </div>
+                                      </div>
+                                      </div>
+                                    </div>
            
                
             
@@ -1772,6 +2133,11 @@ document.getElementById('pictures-1').addEventListener('click', function(e) {
   });
 </script>
 
+
+<!-- multiple select -->
+<script src="../vendors/jquery/jquery.min.js"></script>
+<script src="../vendors/select2/select2.min.js"></script>
+<script src="../vendors/select2/select2.full.min.js"></script>
   </body>
 
 </html>

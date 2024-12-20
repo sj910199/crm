@@ -46,8 +46,6 @@
 
 
 
-
-
 /* searchdropdown */
 /* Increase z-index to ensure dropdown is above other content */
 /* Ensure the dropdown is displayed properly */
@@ -91,14 +89,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 .combo-box-dropdown {
   position: absolute;
   top: 100%;
@@ -122,6 +112,10 @@
   background-color: #f0f0f0;
 }
 
+
+
+
+/* Projectdetails */
 /* chart */
 .chart-container {
   display: inline-block;
@@ -132,7 +126,13 @@ canvas {
   width: 100%;
   height: auto;
 }
-</style>
+
+
+/* projectdetails */
+.d-md-block{
+  padding-top: 10px;;
+}
+
 
 
 
