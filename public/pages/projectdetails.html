@@ -429,24 +429,53 @@
                     <div class="container">
                         <div class="row">
                           <!-- Left column (card) -->
+
+                          
                           <div class="col-md-6">
                             <div class="card mb-3">
-                              <div class="bg-holder d-none d-lg-block bg-card" style="background-image:url(../../assets/img/icons/spot-illustrations/corner-4.png);">
-                              </div> <!--/.bg-holder-->
                               <div class="card-body position-relative">
-                                <h3>Project Alpha</h3>
-                                <p class="mt-2">
-                                  In Progress<br>
-                                  High<br>
-                                  WO12345<br>
-                                  Start Date: 2024-12-01<br>
-                                  Due Date: 2024-12-15<br>
-                                  Completion Date: -<br>
-                                </p>
+                                <div class="row">
+                                  <div class="col-lg-8">
+                                    <h3>Project Alpha</h3>
+                                    <p class="mt-2">
+                                      In Progress <br>
+                                      High <br>
+                                      WO12345 <br>
+                                      Start Date: 2024-12-01<br>
+                                      Due Date: 2024-12-15<br>
+                                      Completion Date: -<br>
+                                    </p>
+
+                                    <!-- Mobile view: 3-dot button (Upper Right) -->
+                                    <div class="dropdown d-lg-none position-absolute top-0 end-0 p-3">
+                                      <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v"></i> <!-- 3 dots icon -->
+                                      </button>
+                                      <!-- Mobile dropdown with buttons -->
+                                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><button class="dropdown-item">Edit</button></li>
+                                        <li><button class="dropdown-item">Profile</button></li>
+                                        <li><button class="dropdown-item">Invoice</button></li>
+                                        <li><button class="dropdown-item">Payment</button></li>
+                                        <li><button class="dropdown-item">Projects</button></li>
+                                      </ul>
+                                    </div>
+
+                                    <!-- Desktop view: buttons visible on hover -->
+                                    <div class="button-container">
+                                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Edit</button>
+                                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Profile</button>
+                                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Invoice</button>
+                                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Payment</button>
+                                      <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Projects</button>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                      
+
+
                           <!-- Right column (carousel) -->
                           <div class="col-md-6">
                             <div class="carousel slide position-relative" id="carouselExampleCaptions" data-bs-ride="carousel">
@@ -482,11 +511,7 @@
 
                               
 
-                              <div class="carousel-indicators">
-                                <button class="active" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                              </div>
+                             
                               
                               <div class="carousel-inner rounded-1" data-bs-theme="light">
                                 <div class="carousel-item active">
@@ -499,21 +524,8 @@
                                     </p>
                                   </div>
                                 </div>
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="../assets/img/generic/infobg.jpg" alt="First slide" />
-                                    <div class="carousel-caption d-block">
-                                      <h5 class="text-dark">Vision</h5>
-                                      <p class="text-dark">To be the leading provider of innovative and eco-friendly glass products, shaping a brighter, more efficient future in design.
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="carousel-item active">
-                                    <img class="d-block w-100" src="../assets/img/generic/infobg.jpg" alt="First slide" />
-                                    <div class="carousel-caption d-block">
-                                      <h5 class="text-dark">Note</h5>
-                                      <p class="text-dark">Our passion for craftsmanship and sustainability drives us to deliver glass solutions that blend aesthetics with practicality for lasting impact.
-                                    </div>
-                                  </div>
+                                
+                                 
                               </div>
                             </div>
                           </div>
@@ -521,7 +533,163 @@
      
                         </div>
 
-                        
+                        <h4 id="list-item-2">Entities</h4>
+                          <div class="table-responsive scrollbar">
+                            <table class="table table-bordered table-striped fs-10 mb-0">
+                              <thead class="bg-200">
+                                <tr>
+                                  <th class="text-900 sort" data-sort="orderNumber">Name</th>
+                                  <th class="text-900 sort" data-sort="orderDate">Role</th>
+                                  <th class="text-900 sort" data-sort="projectId">Email</th>
+                                  <th class="text-900 sort" data-sort="itemsSold">Phone</th>
+                                  <th class="text-900 sort" data-sort="quantity">Updates</th>
+                                  <th class="text-900 sort" data-sort="unitPrice">Action</th>
+                                  
+                                </tr>
+                              </thead>
+                              <tbody class="list">
+
+                               
+
+
+                                <tr>
+                                  <td class="orderNumber">John Doe</td>
+                                  <td class="orderDate">Project Manager</td>
+                                  <td class="projectId">john.doe@example.com</td>
+                                  <td class="itemsSold">(123) 456-7890</td>
+                                  <td class="quantity">
+                                    <div class="form-group">
+                                      <select class="form-select selectpicker" id="multiple-select.01" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                        <option>Personal Update</option>
+                                        <option>Scheduling Update</option>
+                                        <option>Invoice Update</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td class="unitPrice">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                      <span class="fas fa-edit" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove">
+                                      <span class="fas fa-times" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                  </td>
+                                  
+                                </tr>
+
+                                <tr>
+                                  <td class="orderNumber">John Doe</td>
+                                  <td class="orderDate">Project Manager</td>
+                                  <td class="projectId">john.doe@example.com</td>
+                                  <td class="itemsSold">(123) 456-7890</td>
+                                  <td class="quantity">
+                                    <div class="form-group">
+                                      <select class="form-select selectpicker" id="multiple-select.02" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                        <option>Personal Update</option>
+                                        <option>Scheduling Update</option>
+                                        <option>Invoice Update</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td class="unitPrice">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                      <span class="fas fa-edit" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove">
+                                      <span class="fas fa-times" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                  </td>
+                                  
+                                </tr>
+
+                                <tr>
+                                  <td class="orderNumber">John Doe</td>
+                                  <td class="orderDate">Project Manager</td>
+                                  <td class="projectId">john.doe@example.com</td>
+                                  <td class="itemsSold">(123) 456-7890</td>
+                                  <td class="quantity">
+                                    <div class="form-group">
+                                      <select class="form-select selectpicker" id="multiple-select.03" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                        <option>Personal Update</option>
+                                        <option>Scheduling Update</option>
+                                        <option>Invoice Update</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td class="unitPrice">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                      <span class="fas fa-edit" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove">
+                                      <span class="fas fa-times" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                  </td>
+                                  
+                                </tr>
+
+                                <tr>
+                                  <td class="orderNumber">John Doe</td>
+                                  <td class="orderDate">Project Manager</td>
+                                  <td class="projectId">john.doe@example.com</td>
+                                  <td class="itemsSold">(123) 456-7890</td>
+                                  <td class="quantity">
+                                    <div class="form-group">
+                                      <select class="form-select selectpicker" id="multiple-select.04" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                        <option>Personal Update</option>
+                                        <option>Scheduling Update</option>
+                                        <option>Invoice Update</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td class="unitPrice">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                      <span class="fas fa-edit" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove">
+                                      <span class="fas fa-times" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                  </td>
+                                  
+                                </tr>
+                                <tr>
+                                  <td class="orderNumber">John Doe</td>
+                                  <td class="orderDate">Project Manager</td>
+                                  <td class="projectId">john.doe@example.com</td>
+                                  <td class="itemsSold">(123) 456-7890</td>
+                                  <td class="quantity">
+                                    <div class="form-group">
+                                      <select class="form-select selectpicker" id="multiple-select.05" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
+                                        <option>Personal Update</option>
+                                        <option>Scheduling Update</option>
+                                        <option>Invoice Update</option>
+                                      </select>
+                                    </div>
+                                  </td>
+                                  <td class="unitPrice">
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                      <span class="fas fa-edit" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                    <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove">
+                                      <span class="fas fa-times" data-fa-transform="shrink-2"></span>
+                                    </button>
+                                  </td>
+                                  
+                                </tr>
+                              
+                             
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="row align-items-center mt-3">
+                            <div class="pagination d-none"></div>
+                            <div class="col">
+                              <!-- Pagination or other content can be added here -->
+                            </div>
+                          </div>
+                        </div>
+
+
+            
 
 
 
@@ -530,181 +698,24 @@
 
 
 
-                          
+
+
+
+
+
+
+
+
+
+
+
                           
                    
 
-                    <h4 id="list-item-2">Entities</h4>
-                    <div class="dropdown font-sans-serif mb-1 d-flex justify-content-end">
-                      <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Entity
-                      </button>
-                    
-                      <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Add Existing Entity</a>
-                        <a class="dropdown-item" href="#">Create New Entity</a>
-                      </div>
-                    </div>
-                    
-                    
-                    <div class="table-responsive scrollbar">
-                      
-                        <table class="table table-hover">
-                          <thead>
-                            <tr>
-                              <th scope="col">Name</th>
-                              <th scope="col">Role</th>
-                              <th scope="col">Email</th>
-                              <th scope="col">Phone</th>
-                              <th scope="col">Updates
-                                
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="hover-actions-trigger">
-                              <td class="align-middle text-nowrap">
-                                <div class="d-flex align-items-center">
-                                  <div class="avatar avatar-xl">
-                                    <img class="rounded-circle" src="../assets/img/team/4.jpg" alt="" />
-                                  </div>
-                                  <div class="ms-2">Ricky Antony</div>
-                                </div>
-                              </td>
-                              <td class="align-middle text-nowrap">Customer</td>
-                             
-                              <td class="align-middle text-nowrap"> ricky@example.com</td>
-                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
-                              <td class="align-middle text-nowrap">
 
-                                <div class="form-group">
-                                  <label for="multiple-select">Select options</label>
-                                  <select class="form-select selectpicker" id="multiple-select1" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
-                                    <option>Personal Update</option>
-                                    <option>Scheduling Update</option>
-                                    <option>Invoice Update</option>
-                                  </select>
-                                </div>
-        
-                                <!-- <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox1" type="checkbox" value="option1" />
-                                    <label class="form-check-label" for="inlineCheckbox1">Proposal Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="option2" />
-                                    <label class="form-check-label" for="inlineCheckbox2">Scheduling Update</label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="option3"  />
-                                    <label class="form-check-label" for="inlineCheckbox3">Invoice Update </label>
-                                  </div> -->
-                            </td>
-                              <td class="w-auto">
-                                <div class="btn-group btn-group hover-actions end-0 me-4">
-                                  <button class="btn btn-tertiary pe-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit"></span></button>
-                                  <button class="btn btn-tertiary ps-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times"></span></button>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr class="hover-actions-trigger">
-                              <td class="align-middle text-nowrap">
-                                <div class="d-flex align-items-center">
-                                  <div class="avatar avatar-xl">
-                                    <img class="rounded-circle" src="../assets/img/team/13.jpg" alt="" />
-                                  </div>
-                                  <div class="ms-2">Emma Watson</div>
-                                </div>
-                              </td>
-                              <td class="align-middle text-nowrap">Customer</td>
-                             
-                              <td class="align-middle text-nowrap"> ricky@example.com</td>
-                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
-                              <td class="align-middle text-nowrap">
-                                <div class="form-group">
-                                  <label for="multiple-select">Select options</label>
-                                  <select class="form-select selectpicker" id="multiple-select2" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
-                                    <option>Personal Update</option>
-                                    <option>Scheduling Update</option>
-                                    <option>Invoice Update</option>
-                                  </select>
-                                </div>
-                            </td>
-                            <td class="w-auto">
-                              <div class="btn-group btn-group hover-actions end-0 me-4">
-                                <button class="btn btn-tertiary pe-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit"></span></button>
-                                <button class="btn btn-tertiary ps-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times"></span></button>
-                              </div>
-                            </td>
-                            </tr>
-                            <tr class="hover-actions-trigger">
-                              <td class="align-middle text-nowrap">
-                                <div class="d-flex align-items-center">
-                                  <div class="avatar avatar-xl">
-                                    <img class="rounded-circle" src="../assets/img/team/2.jpg" alt="" />
-                                  </div>
-                                  <div class="ms-2">Antony Hopkins</div>
-                                </div>
-                              </td>
-                           
-                              <td class="align-middle text-nowrap">Customer</td>
-                             
-                              <td class="align-middle text-nowrap"> ricky@example.com</td>
-                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
-                              <td class="align-middle text-nowrap">
-                                <div class="form-group">
-                                  <label for="multiple-select">Select options</label>
-                                  <select class="form-select selectpicker" id="multiple-select3" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
-                                    <option>Personal Update</option>
-                                    <option>Scheduling Update</option>
-                                    <option>Invoice Update</option>
-                                  </select>
-                                </div>
-                            </td>
-                            <td class="w-auto">
-                              <div class="btn-group btn-group hover-actions end-0 me-4">
-                                <button class="btn btn-tertiary pe-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit"></span></button>
-                                <button class="btn btn-tertiary ps-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times"></span></button>
-                              </div>
-                            </td>
-                            </tr>
-                            <tr class="hover-actions-trigger">
-                              <td class="align-middle text-nowrap">
-                                <div class="d-flex align-items-center">
-                                  <div class="avatar avatar-xl">
-                                    <img class="rounded-circle" src="../assets/img/team/3.jpg" alt="" />
-                                  </div>
-                                  <div class="ms-2">Jennifer Schramm</div>
-                                </div>
-                              </td>
-                              <td class="align-middle text-nowrap">Customer</td>
-                             
-                              <td class="align-middle text-nowrap"> ricky@example.com</td>
-                              <td class="align-middle text-nowrap"> (+123) - 456-7891</td>
-                              <td class="align-middle text-nowrap">
-                                <div class="form-group">
-                                  <label for="multiple-select">Select options</label>
-                                  <select class="form-select selectpicker" id="multiple-select4" multiple="multiple" data-options='{"placeholder":"Select your options"}'>
-                                    <option>Personal Update</option>
-                                    <option>Scheduling Update</option>
-                                    <option>Invoice Update</option>
-                                  </select>
-                                </div>
-                            </td>
-                            <td class="w-auto">
-                              <div class="btn-group btn-group hover-actions end-0 me-4">
-                                <button class="btn btn-tertiary pe-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit"></span></button>
-                                <button class="btn btn-tertiary ps-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times"></span></button>
-                              </div>
-                            </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                         
-                      </div>
-                     
 
  
-
+<br>
                       <h4 id="list-item-3">Items</h4>
 
                       <div class="d-flex justify-content-end">
@@ -878,170 +889,13 @@
 
 
 
-<!-- 
-                    <h4 id="list-item-3">Items</h4>
-
-                    <div class="d-flex justify-content-end">
-                      <div class="btn-group">
-                        <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Item</button>
-                        <div class="dropdown-menu py-0">
-                          <div class="card shadow-none border-0" style="width: 22rem;">
-                            <div class="card-body">
-                              
-                              <form>
-                                <div class="mb-3">
-                                  <input class="form-control" type="email" placeholder="Item" />
-                                </div>
-                                <div class="mb-3">
-                                  <input class="form-control" type="email" placeholder="Description" />
-                                </div>
-                                <div class="mb-3">
-                                  <input class="form-control" type="email" placeholder="Quantity" />
-                                </div>
-                                <div class="mb-3">
-                                  <input class="form-control" type="email" placeholder="Price" />
-                                </div>
-                                
-                                <div class="mb-3">
-                                  <button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">Add</button>
-                                </div>
-                              </form>
-                              
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                     -->
-
-
-
-
-
-                    <!-- <div id="tableExample4" data-list='{"valueNames":["name","email","payment"],"filter":{"key":"payment"}}'>
-                      <div class="row justify-content-end g-0">
-                        <div class="col-auto px-3">
-                      <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                            <option selected="" value="">Select order status</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Success">Order</option>
-                            <option value="Blocked">Delivered</option>
-                          </select>
-                        </div>
-                      </div> -->
-                      <!-- <div class="table-responsive scrollbar">
-                        <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
-                          <thead class="bg-200">
-                            <tr>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Item</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="email">Description</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Quantity</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="price">Price</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="total">Total</th>
-                              <th class="text-900 sort align-middle white-space-nowrap text-end pe-4" data-sort="status">Status</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="actions">Actions</th>
-
-
-
-
-                            </tr>
-                          </thead>
-                          <tbody class="list" id="table-purchase-body">
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
-                              <td class="align-middle white-space-nowrap email">Tempered Glass 4x4	</td>
-                              <td class="align-middle white-space-nowrap quantity">12	</td>
-                              <td class="align-middle white-space-nowrap price">$115.00	</td>
-                              <td class="align-middle white-space-nowrap total">$512.00	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class="badge badge rounded-pill badge-subtle-success">Success<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                </td>
-                              </td>
-                              <td class="align-middle white-space-nowrap total">
-	</td>
-                            </tr>
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
-                              <td class="align-middle white-space-nowrap email">Tempered Glass 4x4	</td>
-                              <td class="align-middle white-space-nowrap quantity">12	</td>
-                              <td class="align-middle white-space-nowrap price">$115.00	</td>
-                              <td class="align-middle white-space-nowrap total">$512.00	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class="badge badge rounded-pill badge-subtle-success">Success<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                </td>
-                              </td>
-                            </tr>
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
-                              <td class="align-middle white-space-nowrap email">Tempered Glass 4x4	</td>
-                              <td class="align-middle white-space-nowrap quantity">12	</td>
-                              <td class="align-middle white-space-nowrap price">$115.00	</td>
-                              <td class="align-middle white-space-nowrap total">$512.00	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class="badge badge rounded-pill badge-subtle-success">Success<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                </td>
-                              </td>
-                            </tr>
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
-                              <td class="align-middle white-space-nowrap email">Tempered Glass 4x4	</td>
-                              <td class="align-middle white-space-nowrap quantity">12	</td>
-                              <td class="align-middle white-space-nowrap price">$115.00	</td>
-                              <td class="align-middle white-space-nowrap total">$512.00	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class="badge badge rounded-pill badge-subtle-success">Success<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                </td>
-                              </td>
-                            </tr>
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><a href="../../app/e-commerce/customer-details.html">Glass Panel</a></th>
-                              <td class="align-middle white-space-nowrap email">Tempered Glass 4x4	</td>
-                              <td class="align-middle white-space-nowrap quantity">12	</td>
-                              <td class="align-middle white-space-nowrap price">$115.00	</td>
-                              <td class="align-middle white-space-nowrap total">$512.00	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class="badge badge rounded-pill badge-subtle-success">Success<span class="ms-1 fas fa-check" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><span class="fas fa-edit" data-fa-transform="shrink-2"></span></button>
-                                  <button class="btn btn-tertiary ps-1 pe-1 pw-1 pn-1" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Remove"><span class="fas fa-times" data-fa-transform="shrink-2"></span></button>
-                                </td>
-                              </td>
-                            </tr>
-                            <tr class="btn-reveal-trigger">
-                              <th class="align-middle white-space-nowrap name"><strong>Total Non-Taxable: $150</strong></a></th>
-                              <td class="align-middle white-space-nowrap email"><strong>Tax: $15</strong>Tax: $15	</td>
-                              <td class="align-middle white-space-nowrap quantity"><strong>Total Taxable: $150</strong>	</td>
-                              <td class="align-middle white-space-nowrap price"><strong>Total: $365</strong></td>
-                              <td class="align-middle white-space-nowrap total">	</td>
-                              <td class="align-middle text-end fs-9 white-space-nowrap status"><span class=""><span class="" data-fa-transform="shrink-2"></span></span>
-                                <td class="align-middle white-space-nowrap actions"> 
-                                  
-                                </td>
-                              </td>
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                      </div>
-                    </div> -->
 
 
 
 
 
 
-
-
-
-
+                    <br>
                     <h4 id="list-item-4">Team & Tasks</h4>
                     <div class="d-flex justify-content-end">
                       <div class="btn-group">
@@ -1084,17 +938,7 @@
 
 
 
-                    <!-- <div id="tableExample4" data-list='{"valueNames":["name","email","payment"],"filter":{"key":"payment"}}'>
-                      <div class="row justify-content-end g-0">
-                        <div class="col-auto px-3">
-                      <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                            <option selected="" value="">Select order status</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Success">Order</option>
-                            <option value="Blocked">Delivered</option>
-                          </select>
-                        </div>
-                      </div> -->
+                
                       <div class="table-responsive scrollbar">
                         <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
                           <thead class="bg-200">
@@ -1160,18 +1004,18 @@
                     <!-- Find the JS file for the following chart at: src/js/charts/chartjs/chart-polar.js-->
 
                    
-                  
-                    <h1>Overview</h1>
+                  <br>
+                    <h3>Overview</h3>
 
                     <!-- Pie Chart 1 -->
                     <div class="chart-container">
-                      <h3>Sales Distribution</h3>
+                      <h4>Sales Distribution</h4>
                       <canvas id="chartjs-doughnut-chart1"></canvas>
                     </div>
                   
                     <!-- Pie Chart 2 -->
                     <div class="chart-container">
-                      <h3>Expense Categories</h3>
+                      <h4>Expense Categories</h4>
                       <canvas id="chartjs-doughnut-chart2"></canvas>
                     </div>
                   
