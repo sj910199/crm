@@ -1,15 +1,15 @@
  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 
 
-// Form validation logic
-function validateForm(event) {
+// Attach the validation logic to the form's submit event
+document.addEventListener('DOMContentLoaded', function() {
   var form = document.querySelector('.needs-validation');
-  if (!form.checkValidity()) {
-    event.preventDefault();
-    event.stopPropagation();
-    form.classList.add('was-validated');
-  }
-}
+  
+  // Prevent default validation on submit and apply custom validation
+  form.addEventListener('submit', function(event) {
+    validateForm(event);
+  }, false);
+});
 
 
 
