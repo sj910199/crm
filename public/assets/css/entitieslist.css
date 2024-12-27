@@ -133,6 +133,125 @@ canvas {
   padding-top: 10px;;
 }
 
+/* Items Section */
+/* Style the picture-item container */
+.pictures-section {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust gap between the picture and the placeholder as needed */
+}
+
+.picture-item {
+  position: relative;
+}
+
+.picture-placeholder {
+  width: 400px; /* Adjust the width as needed */
+  height: 230px; /* Adjust the height as needed */
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+
+.picture-placeholder i {
+  font-size: 24px;
+  color: #888;
+}
+
+/* Add hover effect for better user experience */
+.picture-placeholder:hover {
+  border-color: #888;
+}
+
+/* Adjust the positioning of the remove button */
+.remove-picture {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(54, 54, 54);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Fileeeeeeeeee */
+
+
+    .file-placeholder {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 400px;
+        height: 25px;
+        border: 2px dashed #ccc;
+        cursor: pointer;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .file-placeholder i {
+        font-size: 48px; /* Larger icon for better visibility */
+        color: #777;
+    }
+
+    .file-preview-section {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .file-item {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .file-item img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .file-item .file-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .file-item i {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+
+    .file-item p {
+        margin: 0;
+    }
+
+    /* Remove button */
+    .file-item .remove-button {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 
 
 

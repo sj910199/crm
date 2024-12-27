@@ -25,6 +25,8 @@
     <meta name="theme-color" content="#ffffff">
     <script src="../assets/js/config.js"></script>
     <script src="../vendors/simplebar/simplebar.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
 
     <!-- ===============================================-->
@@ -433,34 +435,50 @@
                           
                           <div class="col-md-6">
                             <div class="card mb-3">
-                              <div class="card-body position-relative">
-                                <div class="row">
-                                  <div class="col-lg-8">
-                                    <h3 contenteditable="false" id="projectName1">Project Alpha</h3>
-                                    <p class="mt-2" id="projectDetails1" contenteditable="false">
-                                      In Progress <br>
-                                      High <br>
-                                      WO12345 <br>
-                                      2024-12-01 <br>
-                                      2024-12-15 <br>
-                                      - <br>
-                                    </p>
-                                    <!-- Button positioned in the top-right corner -->
-                                    <button id="editButton1" class="btn btn-falcon-default btn-sm position-absolute top-0 end-0 m-3" type="button" style="z-index: 10;">
-                                      <span class="fas fa-edit me-1" data-fa-transform="shrink-3"></span>
-                                    </button>
-                                  </div>
+                                <div class="card-body position-relative">
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <!-- Project Name Editable Field -->
+                                            <h3 contenteditable="false" id="projectName1" class="editable-field">Project Alpha</h3>
+                                            
+                                            <!-- WO# Editable Field -->
+                                            <input type="text" id="woNumber1" class="form-control" value="WO12345" placeholder="Enter WO#" disabled>
+                        
+                                            <!-- Customer Dropdown (Searchable) -->
+                                            <div class="form-group mt-3">
+                                                <label for="customerSelect1">Select Customer:</label>
+                                                <select id="customerSelect1" class="form-control select2" style="width: 100%;" disabled>
+                                                    <option value="customer1">Customer 1</option>
+                                                    <option value="customer2">Customer 2</option>
+                                                    <option value="customer3">Customer 3</option>
+                                                </select>
+                                            </div>
+                        
+                                            <p class="mt-2" id="projectDetails1" contenteditable="false">
+                                                In Progress <br>
+                                                High <br>
+                                                WO12345 <br>
+                                                2024-12-01 <br>
+                                                2024-12-15 <br>
+                                                - <br>
+                                            </p>
+                        
+                                            <!-- Button positioned in the top-right corner -->
+                                            <button id="editButton1" class="btn btn-falcon-default btn-sm position-absolute top-0 end-0 m-3" type="button" style="z-index: 10;">
+                                                <span class="fas fa-edit me-1" data-fa-transform="shrink-3"></span> Edit
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
-                          
+                        </div>
+                        
                           <div class="col-md-6">
                             <div class="card mb-3">
                               <div class="card-body position-relative">
                                 <div class="row">
                                   <div class="col-lg-8">
-                                    <h3 contenteditable="false" id="projectName2">Notes</h3>
+                                    <h3 contenteditable="false" id="projectName2">Project Scope</h3>
                                     <p class="mt-3 mb-4" id="projectDetails2" contenteditable="false">
                                       Our mission is to deliver innovative, sustainable, and customer-centric solutions that empower businesses to thrive in the digital age.
                                     <br><br><br>
@@ -705,18 +723,19 @@
                         </div>
                       </div>
                       
+
+
                       <div class="table-responsive scrollbar">
                         <table class="table table-sm table-striped fs-10 mb-0 overflow-hidden">
                           <thead class="bg-200">
                             <tr>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Quntity</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="name">Quantity</th>
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="email">Number</th>
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Details</th>
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Taxable</th>
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Status</th>
-                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Vandor</th>
+                              <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="quantity">Vendor</th>
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="price">More Information</th>
-                              
                               <th class="text-900 sort pe-1 align-middle white-space-nowrap" data-sort="actions">Actions</th>
                             </tr>
                           </thead>
@@ -730,88 +749,72 @@
                               <td>$45</td>
                               <td>Ok</td>
                               <td>Ok</td>
-                              <td>
-                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
-                              </td>
+                              <td><button class="btn btn-falcon-default btn-sm">Action</button></td>
                             </tr>
-                            
-                            <!-- Collapsible Row: Detailed Content with Add/Remove Picture functionality -->
-                            <tr class="collapse" id="details-1">
-                              <td colspan="7">
+                      
+                            <!-- Full Description now shown directly after the main row -->
+                            <tr>
+                              <td colspan="6">
                                 <div class="p-3">
                                   <p><strong>Full Description:</strong> Glass Specification: <br>
                                     W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
                                     Grids= NA,<br>
                                     Spacer= N/A, OverAll Thickness= N/A,<br>
                                     Shape= Square/Rectangular,<br>
-                                    Lead time= Standard<br>
-                                    <br>
+                                    Lead time= Standard<br><br>
+                      
                                     Frame details:<br>
                                     Frame type= N/A, Frame material= N/A,<br>
-                                    Notes=<br>
-                                    <br>
+                                    Notes=<br><br>
+                      
                                     Services:<br>
                                     DeliveryDelivery= For pick up from designated warehouse,<br>
                                     Labor / Installation= Not included,<br>
                                     Material/Parts= Not included,<br>
-                                    Special service notes =</p><br>
-                                  <div class="pictures-section" id="pictures-1">
-                                    <div class="picture-item mb-2">
-                                      <img src="../assets/img/generic/3.jpg" alt="Item 1 Image" class="img-fluid" style="max-width: 400px;">
-                                      <button class="btn btn-danger btn-sm remove-picture" type="button" onclick="removePicture(this)">Remove</button>
-                                    </div>
-                                  </div>
-                                  <button class="btn btn-secondary btn-sm mt-3" type="button" onclick="addPicture('pictures-1')">Add Picture</button>
-                                </div>
-                              
-                              </td>
-                            </tr>
-
-                              <!-- Second Row: Main Content -->
-                              <tr>
-                                <td>Item 1</td>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>$15</td>
-                                <td>$45</td>
-                                <td>Ok</td>
-                                <td>Ok</td>
-                                <td>
-                                  <button class="btn btn-falcon-default btn-sm me-1 mb-1" data-bs-toggle="collapse" data-bs-target="#details-1">Details</button>
-                                </td>
-                              </tr>
-                              
-                              <!-- Collapsible Row: Detailed Content with Add/Remove Picture functionality -->
-                              <tr class="collapse" id="details-1">
-                                <td colspan="7">
-                                  <div class="p-3">
-                                    <p><strong>Full Description:</strong> Glass Specification: <br>
-                                      W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
-                                      Grids= NA,<br>
-                                      Spacer= N/A, OverAll Thickness= N/A,<br>
-                                      Shape= Square/Rectangular,<br>
-                                      Lead time= Standard<br>
-                                      <br>
-                                      Frame details:<br>
-                                      Frame type= N/A, Frame material= N/A,<br>
-                                      Notes=<br>
-                                      <br>
-                                      Services:<br>
-                                      DeliveryDelivery= For pick up from designated warehouse,<br>
-                                      Labor / Installation= Not included,<br>
-                                      Material/Parts= Not included,<br>
-                                      Special service notes =</p><br>
+                                    Special service notes =</p>
                                     <div class="pictures-section" id="pictures-1">
-                                      <div class="picture-item mb-2">
-                                        <img src="../assets/img/generic/3.jpg" alt="Item 1 Image" class="img-fluid" style="max-width: 400px;">
-                                        <button class="btn btn-danger btn-sm remove-picture" type="button" onclick="removePicture(this)">Remove</button>
+                                      <!-- Initial image placeholder that triggers file selection -->
+                                      <div class="picture-placeholder mb-2" onclick="document.getElementById('fileInput').click();">
+                                          <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
                                       </div>
-                                    </div>
-                                    <button class="btn btn-secondary btn-sm mt-3" type="button" onclick="addPicture('pictures-1')">Add Picture</button>
+                                  
+                                      <!-- Hidden file input for selecting image -->
+                                      <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'pictures-1')">
+                                  
+
+                                    
+                                    
+                                    
                                   </div>
-                                
+                                      <!-- Add File -->
+                                      <div id="filePreview" class="file-container">
+                                        <!-- Placeholder for file upload -->
+                                    </div>
+                                  
+                                  
                                 </td>
-                              </tr>
+                                </div>
+                              </td>
+                      
+                              <!-- Column for More Information including Tax, Labor, and Hours -->
+                              <td colspan="2">
+                                <div class="p-3">
+                                  <p><strong>Tax:</strong> Yes<br>
+                                     <strong>Labor:</strong> 2<br>
+                                     <strong>Hours:</strong> 4</p>
+                                </div>
+                              </td>
+                              
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+
+
+
+                      
+                    
                             
                           </tbody>
                         </table>
@@ -1794,71 +1797,127 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../vendors/list.js/list.min.js"></script>
     <script src="../assets/js/theme.js"></script>
-    <script>
 
 
-// items section:details
- // Function to add a picture input field with preview functionality
-function addPicture(pictureSectionId) {
-  const pictureSection = document.getElementById(pictureSectionId);
+
+<!-- // items section:details
+ // Function to add a picture input field with preview functionality -->
+<script>
+
+ // Preview and Upload Image
+ function previewAndUploadImage(input, pictureSectionId) {
+     if (input.files && input.files[0]) {
+         const file = input.files[0];
+         const reader = new FileReader();
+ 
+         // Preview the image
+         reader.onload = function(e) {
+             // Get the picture section
+             const pictureSection = document.getElementById(pictureSectionId);
+ 
+             // Remove existing placeholder before adding the uploaded image
+             const existingPlaceholder = pictureSection.querySelector('.picture-placeholder');
+             if (existingPlaceholder) {
+                 existingPlaceholder.remove();
+             }
+ 
+             // Create a new image container for the uploaded image
+             const newPictureItem = document.createElement('div');
+             newPictureItem.classList.add('picture-item', 'mb-2');
+ 
+             // Create an image element for the uploaded file
+             const img = document.createElement('img');
+             img.src = e.target.result; // Local preview of the image
+             img.alt = 'Uploaded Image';
+             img.classList.add('img-fluid');
+             img.style.maxWidth = '400px'; // Adjust size as needed
+ 
+             // Create a remove button for the uploaded image
+             const removeButton = document.createElement('button');
+             removeButton.classList.add('btn', 'btn-danger', 'btn-sm', 'remove-picture');
+             removeButton.textContent = 'x';
+             removeButton.type = 'button';
+             removeButton.onclick = function() {
+                 removePicture(this);
+             };
+ 
+             // Append the image and remove button to the new picture container
+             newPictureItem.appendChild(img);
+             newPictureItem.appendChild(removeButton);
+ 
+             // Add the new picture container to the pictures section
+             pictureSection.appendChild(newPictureItem);
+ 
+             // Clear the file input to allow re-selection of the same file
+             input.value = '';
+ 
+             // Add a new picture placeholder for additional image uploads at the end
+             addNewPlaceholder(pictureSection);
+         };
+ 
+         // Read the file to display the preview
+         reader.readAsDataURL(file);
+ 
+         // Upload the image to the server (optional)
+         uploadImageToServer(file);
+     }
+ }
+ 
+ // Function to add a new image placeholder after an image is uploaded
+ function addNewPlaceholder(pictureSection) {
+     // Create a new image placeholder
+     const newPlaceholder = document.createElement('div');
+     newPlaceholder.classList.add('picture-placeholder', 'mb-2');
+     newPlaceholder.onclick = function() {
+         document.getElementById('fileInput').click();
+     };
+ 
+     // Add the plus icon inside the new placeholder
+     const plusIcon = document.createElement('i');
+     plusIcon.classList.add('fas', 'fa-plus');
+     newPlaceholder.appendChild(plusIcon);
+ 
+     // Append the new placeholder to the pictures section after all images
+     pictureSection.appendChild(newPlaceholder);
+ }
+ 
+ // Function to remove picture
+ function removePicture(button) {
+     const pictureItem = button.parentNode;
+     pictureItem.remove();
+ }
+ 
+ // Function to upload the image to the server (optional)
+ function uploadImageToServer(file) {
+     const formData = new FormData();
+     formData.append('image', file);
+ 
+     // Send the image to the server using fetch
+     fetch('/upload', { // Replace with your upload URL
+         method: 'POST',
+         body: formData
+     })
+     .then(response => response.json())
+     .then(data => {
+         if (data.success) {
+             console.log('Image uploaded successfully:', data.imageUrl);
+         } else {
+             console.error('Image upload failed:', data.error);
+         }
+     })
+     .catch(error => {
+         console.error('Error uploading the image:', error);
+     });
+ }
+ </script>
+ 
+
+
+ 
   
-  if (!pictureSection) {
-    console.error("Picture section not found");
-    return;
-  }
+  
+  
 
-  // Create a new div for the picture input
-  const newPictureDiv = document.createElement('div');
-  newPictureDiv.classList.add('picture-item', 'mb-2');
-
-  // Add input field and remove button
-  newPictureDiv.innerHTML = `
-    <input type="file" class="form-control mb-2" accept="image/*" onchange="previewImage(this)" />
-    <img src="" alt="Preview Image" class="img-fluid mb-2" style="display:none; max-width: 200px;" />
-    <button class="btn btn-danger btn-sm remove-picture" type="button">Remove</button>
-  `;
-
-  // Append new picture input to the section
-  pictureSection.appendChild(newPictureDiv);
-}
-
-// Function to remove the picture input field
-function removePicture(button) {
-  const pictureItem = button.parentElement;
-  if (pictureItem) {
-    pictureItem.remove();
-  } else {
-    console.error("No picture item found to remove");
-  }
-}
-
-// Function to preview the uploaded image and hide the file input
-function previewImage(input) {
-  const file = input.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const img = input.nextElementSibling; // Select the img element after the input
-      img.src = e.target.result;
-      img.style.display = 'block'; // Show the image
-      input.style.display = 'none'; // Hide the input after uploading
-    };
-    reader.readAsDataURL(file); // Read the file as a data URL for preview
-  }
-}
-
-// Event listener for the "Add Picture" button
-document.getElementById('add-picture-btn').addEventListener('click', function() {
-  addPicture('pictures-1');
-});
-
-// Event delegation for dynamically added remove buttons
-document.getElementById('pictures-1').addEventListener('click', function(e) {
-  if (e.target.classList.contains('remove-picture')) {
-    removePicture(e.target);
-  }
-});
-    </script>
 
 
 <!-- 4 charts -->
@@ -1921,7 +1980,7 @@ document.getElementById('pictures-1').addEventListener('click', function(e) {
   });
 </script>
 
-
+<!-- Edit Cards -->
 <script>
   function toggleEditMode(button, nameId, detailsId) {
     // Get the elements that need to be made editable
@@ -1953,6 +2012,174 @@ document.getElementById('pictures-1').addEventListener('click', function(e) {
     toggleEditMode(this, 'projectName2', 'projectDetails2');
   });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- File upload -->
+
+<script>
+  // Function to trigger file input when clicking on the placeholder
+  function triggerFileInput(placeholder) {
+      const fileInput = placeholder.querySelector('input[type="file"]');
+      fileInput.click();
+  }
+  
+  // Handle file upload and show preview
+  function handleFileUpload(input) {
+      const file = input.files[0];
+      if (!file) return; // No file selected
+  
+      const filePreview = document.getElementById('filePreview');
+  
+      // Create a container for the uploaded file (either image or non-image)
+      const fileContainer = document.createElement('div');
+      fileContainer.classList.add('file-item');
+  
+      const fileIconElement = document.createElement('i');
+      const fileNameElement = document.createElement('p');
+      fileNameElement.textContent = file.name;
+  
+      // If it's an image, show the image preview
+      if (file.type.startsWith('image/')) {
+          const fileReader = new FileReader();
+          const imgPreview = document.createElement('img');
+          imgPreview.classList.add('img-fluid');
+  
+          fileReader.onload = function(e) {
+              imgPreview.src = e.target.result;
+              fileContainer.appendChild(imgPreview);
+          };
+          fileReader.readAsDataURL(file);
+      } else {
+          // For non-image files, show a file icon
+          fileIconElement.classList.add('fas', 'fa-file-alt');
+          fileContainer.appendChild(fileIconElement);
+      }
+  
+      // Create a remove button for each uploaded file
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('remove-button');
+      removeButton.textContent = 'x';
+      removeButton.onclick = function () {
+          filePreview.removeChild(fileContainer);
+          addFilePlaceholder(); // Ensure placeholder remains
+      };
+  
+      // Append the elements to the file container
+      fileContainer.appendChild(fileNameElement);
+      fileContainer.appendChild(removeButton);
+  
+      // Add the file container to the preview area
+      filePreview.appendChild(fileContainer);
+  
+      // Remove the current placeholder and add a new one
+      addFilePlaceholder();
+  }
+  
+  // Add a new placeholder for file upload
+  function addFilePlaceholder() {
+      const filePreview = document.getElementById('filePreview');
+  
+      // Check if the placeholder already exists, if yes, do not add a new one
+      if (filePreview.querySelector('.file-placeholder')) {
+          return; // Placeholder already exists, no need to add another
+      }
+  
+      // Create a new placeholder div for file upload
+      const newPlaceholder = document.createElement('div');
+      newPlaceholder.classList.add('file-placeholder');
+      newPlaceholder.innerHTML = '<i class="fas fa-upload"></i><p></p>';
+  
+      // Create the hidden file input for triggering file upload
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.style.display = 'none';
+      fileInput.accept = '*/*'; // Allow any type of file
+      fileInput.addEventListener('change', function() {
+          handleFileUpload(this);
+      });
+  
+      // Append the file input to the placeholder
+      newPlaceholder.appendChild(fileInput);
+  
+      // When the placeholder is clicked, trigger the file input
+      newPlaceholder.onclick = function () {
+          fileInput.click();
+      };
+  
+      // Append the placeholder to the preview section
+      filePreview.appendChild(newPlaceholder);
+  }
+  
+  // Initialize the placeholder when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+      addFilePlaceholder();
+  });
+  </script>
+  
+
+
+
+<!-- Edit Project Details Card -->
+<script>
+  $(document).ready(function() {
+      // Apply Select2 to the customer dropdown
+      $('#customerSelect1').select2({
+          placeholder: "Search for customer",
+          allowClear: true
+      });
+
+      // Enable edit mode when the Edit button is clicked
+      $('#editButton1').click(function() {
+          // Toggle contenteditable for the project name
+          $('#projectName1').attr('contenteditable', 'true');
+
+          // Enable the input fields and dropdown
+          $('#woNumber1').prop('disabled', false);
+          $('#customerSelect1').prop('disabled', false);
+
+          // Change the Edit button to Save button
+          $('#editButton1').hide();
+          $('#saveButton1').show();
+      });
+
+      // Save button logic (you can add your save functionality here)
+      $('#saveButton1').click(function() {
+          // Get the updated values
+          const projectName = $('#projectName1').text();
+          const woNumber = $('#woNumber1').val();
+          const customer = $('#customerSelect1').val();
+
+          // Log the saved data (replace with your save functionality)
+          console.log('Saved Project Name:', projectName);
+          console.log('Saved WO#: ', woNumber);
+          console.log('Saved Customer:', customer);
+
+          // Disable the fields and set them back to view mode
+          $('#projectName1').attr('contenteditable', 'false');
+          $('#woNumber1').prop('disabled', true);
+          $('#customerSelect1').prop('disabled', true);
+
+          // Hide the Save button and show the Edit button again
+          $('#saveButton1').hide();
+          $('#editButton1').show();
+      });
+  });
+</script>
+
+<!-- Save Button, initially hidden -->
+<button id="saveButton1" class="btn btn-success btn-sm position-absolute top-0 end-0 m-3" type="button" style="z-index: 10; display: none;">
+  <span class="fas fa-save me-1"></span> Save
+</button>
 
 
 
