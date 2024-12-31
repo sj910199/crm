@@ -1,3 +1,5 @@
+
+
 /* Hide buttons by default */
 .button-container {
   display: none; /* Hidden by default */
@@ -115,17 +117,35 @@
 
 
 
-/* Projectdetails */
-/* chart */
+
+/* Chart container */
+/* Main container for both chart-container divs */
+.chart-row {
+  display: flex; /* Ensures the child elements (charts) are in a row */
+  justify-content: center; /* Centers the entire row horizontally */
+  align-items: center; /* Aligns items vertically in the center */
+  width: 100%; /* Full width for the row */
+  margin: 20px 0; /* Margin for spacing around the row */
+}
+
+/* Individual chart container */
 .chart-container {
-  display: inline-block;
-  width: 45%;
-  margin: 10px;
+  display: flex;
+  flex-direction: column; /* Keeps the heading and canvas in a column */
+  justify-content: center; /* Center vertically within each container */
+  align-items: center; /* Center horizontally within each container */
+  width: 20%; /* Adjust width of each chart container */
+  margin: 10px; /* Space between chart containers */
+  text-align: center;
 }
+
+/* Canvas for the chart */
 canvas {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
 }
+
+
 
 
 /* projectdetails */
@@ -258,3 +278,248 @@ canvas {
 
 
 
+/* Project Details Card */
+
+.project-alpha-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;  /* Allow absolute positioning of the edit button */
+}
+
+.project-alpha-editable {
+  border: none;
+  outline: none;
+  width: 50%;  /* Ensures it matches other fields' width */
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: text;
+  background-color: #f9f9f9;
+}
+
+.project-alpha-editable:focus {
+  background-color: #eef5ff;
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.project-alpha-editable::placeholder {
+  color: #a0a0a0;
+}
+
+.project-alpha-card-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  width: 50%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: transparent;
+  display: inline-block;
+}
+
+
+.project-alpha-dropdown {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  width: 50%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: none;
+}
+
+.project-alpha-dropdown:focus {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-alpha-actions {
+  display: flex;
+  flex-direction: column;  /* Stack the action buttons vertically */
+  align-items: flex-end;   /* Align the buttons to the right */
+  gap: 8px;  /* Space between the buttons */
+  position: absolute;
+  top: 20px; /* Position the action buttons at the top */
+  right: 20px;  /* Position the action buttons to the right */
+}
+
+@media (min-width: 601px) {
+  .project-alpha-actions {
+      flex-direction: column;
+      align-items: flex-end;
+      max-height: calc(100% - 90px);
+      overflow-y: auto;
+  }
+  .col-md-6 {
+    margin-bottom: 0; /* Adds space between cards */
+  }
+}
+
+@media (max-width: 600px) {
+  .project-alpha-actions {
+      justify-content: flex-start;
+      position: static;
+      margin-top: 20px;
+  }
+  .col-md-6 {
+    margin-bottom: 20px; /* Ensures no gap between cards on larger screens */
+  }
+}
+
+.project-alpha-edit-icon {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  background: #fff;
+  color: #374151;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: absolute;
+  bottom: 20px;  /* Position it at the bottom */
+  right: 20px; /* Keep it aligned to the right */
+  border: none;
+}
+
+.project-alpha-edit-icon:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.project-alpha-action-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.project-alpha-action-button:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/* Action buttons */
+/* For buttons with only icons */
+.btn-tertiary {
+  background: transparent; /* Removes the button background */
+  border: none; /* Removes the button border */
+  padding: 0; /* Removes padding */
+  color: inherit; /* Keeps the icon color consistent */
+  cursor: pointer; /* Ensures the button has a pointer cursor */
+}
+
+.btn-tertiary:focus {
+  outline: none; /* Removes the focus outline when clicked */
+  box-shadow: none; /* Removes any default focus shadow */
+}
+
+.btn-tertiary:hover {
+  color: #007bff; /* Optional: Add hover effect to change icon color */
+}
+
+
+ /* Set default width for the display and dropdown */
+ #customer-display, #customer-dropdown {
+  width: 100px; /* Adjust as necessary */
+}
+
+
+
+/* 
+Select2 width */
+ /* Set default width for the display and dropdown */
+ #customer-display, #customer-dropdown {
+  width: 100px; /* Adjust as necessary */
+}
+
+/* Set a reduced width for the select2 container */
+.select2-container--default .select2-selection--single {
+  width: 322px !important; /* Reduce width when editing */
+  background-color: #1f4672; /* Background color for the select input */
+}
+
+/* Set background color for the select2 dropdown */
+.select2-container--default .select2-dropdown {
+  width: 322px !important; /* Match the dropdown width to the input field */
+  background-color: #48dc0e; /* Background color for the dropdown */
+}
+
+/* Optional: Add styling to make the dropdown's item list look better */
+.select2-container--default .select2-results__option {
+  background-color: #cd3838; /* Set background for options */
+  color: #000; /* Set text color */
+}
+
+.select2-container--default .select2-results__option[aria-selected] {
+  background-color: #B8D6F1; /* Highlight option on hover/select */
+}
+
+/* Data picker */
+
+.form-control.datetimepicker{
+  width: 322px; /* Adjust as necessary */
+
+}
+
+/* Card container spacing for sticky menu */
+#cardcontainer{
+  padding-top: 30px;
+}
+#list-example {
+  margin-top: 56px; /* Add top margin to push it below the navbar */
+}
+
+
+/* Items table */
+/* Initial view mode - dark blue */
+.editable {
+  background-color: darkblue;
+  color: white;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Edit mode - light blue */
+.editable.editing {
+  background-color: lightblue;
+}
+
+.editable input {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  padding: 5px;
+}
