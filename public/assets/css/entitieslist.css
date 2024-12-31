@@ -500,7 +500,7 @@ Select2 width */
 /* Initial view mode - dark blue */
 .editable {
   background-color: darkblue;
-  color: white;
+  color: rgb(3, 3, 3);
   position: relative;
   padding: 5px;
   cursor: pointer;
@@ -519,7 +519,7 @@ Select2 width */
   height: 100%;
   border: none;
   background-color: transparent;
-  color: white;
+  color: rgb(12, 12, 12);
   outline: none;
   padding: 5px;
 }
