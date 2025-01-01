@@ -399,6 +399,31 @@ canvas {
   border: none;
 }
 
+.project-alpha-edit-icon-items {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px;
+  background: #fff;
+  color: #374151;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: absolute;
+  top: 25px;  /* Position it at the bottom */
+  right: 25px; /* Keep it aligned to the right */
+  border: none;
+}
+
+.project-alpha-edit-icon-items:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .project-alpha-edit-icon:hover {
   background-color: #f9fafb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -522,4 +547,12 @@ Select2 width */
   color: rgb(12, 12, 12);
   outline: none;
   padding: 5px;
+}
+
+.item-desc {
+  font-size: 14px;
+}
+
+.custom-fields {
+  font-size: 14px;
 }

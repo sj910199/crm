@@ -737,6 +737,84 @@
                         </div>
                       </div>
 
+                      <div class="card mb-3">
+                        <div class="card-header">
+                          <div class="row align-items-center mt-2">
+                            <div class="col-3">
+                              <h6 class="fw-semi-bold">Item Number</h6>
+                              <div class="project-alpha-card-text">01</div>
+                            </div>
+                            <div class="col-3">
+                              <h6 class="fw-semi-bold">Item Name</h6>
+                              <div class="project-alpha-card-text">--</div>
+                            </div>
+                            <div class="col-2">
+                              <h6 class="fw-semi-bold">Quantity</h6>
+                              <div class="project-alpha-card-text">01</div>
+                            </div>
+                            <div class="col">
+                              <h6 class="fw-semi-bold">Price</h6>
+                              <div class="project-alpha-card-text">01</div>
+                            </div>
+                            <div class="col">
+                              <h6 class="fw-semi-bold">Total</h6>
+                              <div class="project-alpha-card-text">01</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body bg-body-tertiary border-top">
+                          <div class="row">
+                            <div class="col-lg-8 col-xxl-7">
+                              <h6 class="fw-semi-bold ls mb-3 text-uppercase">Item Description</h6>
+                              <div class="item-desc">
+                                <p><strong>Full Description:</strong> Glass Specification: <br>
+                                  W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
+                                  Grids= NA,<br>
+                                  Spacer= N/A, OverAll Thickness= N/A,<br>
+                                  Shape= Square/Rectangular,<br>
+                                  Lead time= Standard<br><br>
+                    
+                                  Frame details:<br>
+                                  Frame type= N/A, Frame material= N/A,<br>
+                                  Notes=<br><br>
+                    
+                                  Services:<br>
+                                  DeliveryDelivery= For pick up from designated warehouse,<br>
+                                  Labor / Installation= Not included,<br>
+                                  Material/Parts= Not included,<br>
+                                  Special service notes =</p>
+                              </div>
+                            </div>
+                            <div class="col-lg-4 col-xxl-4 mt-4 mt-lg-0 offset-xxl-1">
+                              <h6 class="fw-semi-bold ls mb-3 text-uppercase">Custom Fields</h6>
+                              <div class="custom-fields">
+                                <p><strong>Tax:</strong> Yes<br>
+                                   <strong>Labor:</strong> 2<br>
+                                   <strong>Hours:</strong> 4</p>
+                              </div>
+                            </div>
+                            <button class="project-alpha-edit-icon-items" onclick="toggleEdit(this)">✎</button>
+                          </div>
+                          <div class="row mt-3">
+                            <h6 class="fw-semi-bold ls mb-3 text-uppercase">Attachments</h6>
+                            <div class="pictures-section" id="pictures-1">
+                              <!-- Initial image placeholder that triggers file selection -->
+                              <div class="picture-placeholder mb-2" onclick="document.getElementById('fileInput').click();">
+                                  <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
+                              </div>
+                        
+                              <!-- Hidden file input for selecting image -->
+                              <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'pictures-1')">
+                            </div>
+                              <!-- Add File -->
+                              <div id="filePreview" class="file-container">
+                                <!-- Placeholder for file upload -->
+                            </div>
+                          </div>
+                          
+                        </div>
+                        <!-- <div class="card-footer border-top text-end"><a class="btn btn-falcon-default btn-sm" href="#!"><span class="fas fa-dollar-sign fs-11 me-1"></span>Refund</a><a class="btn btn-falcon-default btn-sm ms-2" href="#!"><span class="fas fa-check fs-11 me-1"></span>Save changes</a></div> -->
+                      </div>
 
                       <div id="tableExample" data-list='{"valueNames":["itemNumber","itemName","quantity","price","total"],"page":5,"pagination":true}'>
                         <div class="table-responsive scrollbar">
@@ -789,7 +867,7 @@
 
                                     
                                     
-                                    
+                                
                                   </div>
                                       <!-- Add File -->
                                       <div id="filePreview" class="file-container">
@@ -817,6 +895,9 @@
                             </tbody>
                           </table>
                         </div>
+
+
+                      
                         
 
 
@@ -873,7 +954,7 @@
 
 
 
-
+                        
                     <br>
                     <h4 id="list-item-4">Team & Tasks</h4>
                     <div class="d-flex justify-content-end">
@@ -2234,36 +2315,35 @@
     });
 
     // Toggle dropdown visibility and update display text
-    if (isEditing) {
-      // Show the dropdown and hide the text display
-      display.style.display = 'none';
-      dropdown.style.display = 'block';
+    if (dropdown && display) {
+      if (isEditing) {
+        // Show the dropdown and hide the text display
+        display.style.display = 'none';
+        dropdown.style.display = 'block';
 
-      
+        // Set dropdown value based on the current text
+        dropdown.value = display.textContent.trim();
 
-      // Set dropdown value based on the current text
-      dropdown.value = display.textContent.trim();
+        // Initialize Select2 if it's not already initialized
+        if (!$(dropdown).hasClass('select2-hidden-accessible')) {
+          $(dropdown).select2({
+            placeholder: "Select or search for a customer",
+            allowClear: true
+          });
+        }
+      } else {
+        // When not editing, hide the dropdown and show the selected text
+        dropdown.style.display = 'none';
+        display.style.display = 'block';
 
-      // Initialize Select2 if it's not initialized yet
-      if (!$(dropdown).hasClass('select2-hidden-accessible')) {
-        $(dropdown).select2({
-          placeholder: "Select or search for a customer",
-          allowClear: true
-          
-        });
-      }
-    } else {
-      // When not editing, hide the dropdown and show the selected text
-      dropdown.style.display = 'none';
-      display.style.display = 'block';
+        // Update display text with the selected option from dropdown
+        const selectedCustomer = dropdown.options[dropdown.selectedIndex]?.text || '';
+        display.textContent = selectedCustomer;
 
-      // Update display text with the selected option from dropdown
-      const selectedCustomer = dropdown.options[dropdown.selectedIndex].text;
-      display.textContent = selectedCustomer;  // Update text field with selected option
-
-      // Destroy Select2 only if it's been initialized
-      if ($(dropdown).hasClass('select2-hidden-accessible')) {
-        $(dropdown).select2('destroy');
+        // Destroy Select2 if initialized
+        if ($(dropdown).hasClass('select2-hidden-accessible')) {
+          $(dropdown).select2('destroy');
+        }
       }
     }
 
