@@ -737,28 +737,28 @@
                         </div>
                       </div>
 
-                      <div class="card mb-3">
+                      <div class="card mb-3 items-card">
                         <div class="card-header">
                           <div class="row align-items-center mt-2">
                             <div class="col-3">
-                              <h6 class="fw-semi-bold">Item Number</h6>
-                              <div class="project-alpha-card-text">01</div>
+                              <h6 class="fw-semi-bold">Item Number </h6>
+                              <div class="editable">01</div>
                             </div>
                             <div class="col-3">
                               <h6 class="fw-semi-bold">Item Name</h6>
                               <div class="project-alpha-card-text">--</div>
                             </div>
                             <div class="col-2">
-                              <h6 class="fw-semi-bold">Quantity</h6>
-                              <div class="project-alpha-card-text">01</div>
+                              <h6 class="fw-semi-bold">Quantity  </h6>
+                              <div class="editable">01</div>
                             </div>
                             <div class="col">
-                              <h6 class="fw-semi-bold">Price</h6>
-                              <div class="project-alpha-card-text">01</div>
+                              <h6 class="fw-semi-bold">Price  </h6>
+                              <div class="editable">01</div> 
                             </div>
                             <div class="col">
-                              <h6 class="fw-semi-bold">Total</h6>
-                              <div class="project-alpha-card-text">01</div>
+                              <h6 class="fw-semi-bold">Total </h6>
+                              <div class="editable">01</div>
                             </div>
                           </div>
                         </div>
@@ -767,7 +767,7 @@
                             <div class="col-lg-8 col-xxl-7">
                               <h6 class="fw-semi-bold ls mb-3 text-uppercase">Item Description</h6>
                               <div class="item-desc">
-                                <p><strong>Full Description:</strong> Glass Specification: <br>
+                                <p class="project-alpha-card-text"><strong>Full Description:</strong> Glass Specification: <br>
                                   W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
                                   Grids= NA,<br>
                                   Spacer= N/A, OverAll Thickness= N/A,<br>
@@ -788,7 +788,7 @@
                             <div class="col-lg-4 col-xxl-4 mt-4 mt-lg-0 offset-xxl-1">
                               <h6 class="fw-semi-bold ls mb-3 text-uppercase">Custom Fields</h6>
                               <div class="custom-fields">
-                                <p><strong>Tax:</strong> Yes<br>
+                                <p class="project-alpha-card-text"><strong>Tax:</strong> Yes<br>
                                    <strong>Labor:</strong> 2<br>
                                    <strong>Hours:</strong> 4</p>
                               </div>
@@ -2389,8 +2389,6 @@ $('#multiple-select-01').selectpicker({
 </script>
 
 <!-- doubleclick -->
-
-
 <script>
   document.querySelectorAll('.editable').forEach(cell => {
   cell.addEventListener('dblclick', function () {
