@@ -1,4 +1,6 @@
-
+/* * {
+  font-family: "font-base"
+} */
 
 /* Hide buttons by default */
 .button-container {
@@ -45,8 +47,6 @@
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
-
 
 /* searchdropdown */
 /* Increase z-index to ensure dropdown is above other content */
@@ -399,27 +399,24 @@ canvas {
   border: none;
 }
 
-.project-alpha-edit-icon-items {
+.edit-icon-items {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   padding: 8px;
   background: #fff;
   color: #374151;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
+  width: 24px;
+  height: 24px;
+  display: none;
   justify-content: center;
   align-items: center;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s, box-shadow 0.3s;
-  position: absolute;
-  top: 125px;  /* Position it at the bottom */
-  right: 25px; /* Keep it aligned to the right */
-  border: none;
+  border: none; 
 }
 
-.project-alpha-edit-icon-items:hover {
+.edit-icon-items:hover {
   background-color: #f9fafb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -444,9 +441,6 @@ canvas {
   background-color: #f9fafb;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
-
 
 
 /* Action buttons */
@@ -520,6 +514,21 @@ Select2 width */
   margin-top: 56px; /* Add top margin to push it below the navbar */
 }
 
+.header {
+  font-weight: 600;
+  font-size: 13px;
+  color:rgb(3, 3, 3)
+}
+
+.items-card-text {
+  padding: 3px;
+  line-height: 1.4;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  background-color: transparent;
+  display: inline-block;
+}
 
 /* Items table */
 /* Initial view mode - dark blue */
@@ -527,7 +536,7 @@ Select2 width */
   /* background-color: darkblue; */
   color: rgb(3, 3, 3);
   position: relative;
-  padding: 5px;
+  padding: 3px;
   cursor: pointer;
   border-radius: 6px;
 }
@@ -554,4 +563,32 @@ Select2 width */
 
 .items-card {
   font-size: 14px;
+  color: rgb(3, 3, 3);
+}
+
+.item-desc, .custom-fields {
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  background-color: #f9f9f9; 
+  padding: 4px 8px;
+  line-height: 1.4; 
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+.row-items {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  margin-bottom: 15px;
+}
+
+.button-group button {
+  width: 120px; 
+  text-align: center; 
+  padding: 5px 10px; 
 }

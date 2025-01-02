@@ -737,37 +737,109 @@
                         </div>
                       </div>
 
-                      <div class="card mb-3 items-card">
+                      <div class="mb-3 items-card">
                         <div class="card-header">
                           <div class="row align-items-center mt-2">
                             <div class="col-3">
-                              <h6 class="fw-semi-bold">Item Number </h6>
+                              <div class="header">Item Number </div>
                               <div class="editable">01</div>
                             </div>
                             <div class="col-3">
-                              <h6 class="fw-semi-bold">Item Name</h6>
-                              <div class="project-alpha-card-text">--</div>
+                              <div class="header">Item Name</div>
+                              <div class="items-card-text">Enter Item Name</div>
                             </div>
                             <div class="col-2">
-                              <h6 class="fw-semi-bold">Quantity  </h6>
+                              <div class="header">Quantity  </div>
                               <div class="editable">01</div>
                             </div>
                             <div class="col">
-                              <h6 class="fw-semi-bold">Price  </h6>
+                              <div class="header">Price  </div>
                               <div class="editable">01</div> 
                             </div>
                             <div class="col">
-                              <h6 class="fw-semi-bold">Total </h6>
+                              <div class="header">Total </div>
                               <div class="editable">01</div>
                             </div>
                           </div>
                         </div>
-                        <div class="card-body bg-body-tertiary border-top">
+                        
+                        <div class="border-top mt-2 pt-3">
                           <div class="row">
-                            <div class="col-lg-8 col-xxl-7">
-                              <h6 class="fw-semi-bold ls mb-3 text-uppercase">Item Description</h6>
+                            <div class="col-lg-6 col-xxl-7">
+                              <div class="row-items align-items-center">
+                                <div class="header ls text-uppercase">Item Description</div>
+                                <button class="edit-icon-items" type="button" data-bs-toggle="modal" data-bs-target="#itemdesc-modal" onclick="toggleEditItemDesc(this)">✎</button>
+                                <div class="modal fade" id="itemdesc-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+                                    <div class="modal-content position-relative">
+                                      <div class="position-absolute top-0 end-0 mt-2 me-2 z-1">
+                                        <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body p-0">
+                                        <div class="rounded-top-3 py-3 ps-4 pe-6 bg-body-tertiary">
+                                          <div class="header mb-1" id="modalExampleDemoLabel">Edit Item Description </div>
+                                        </div>
+                                        <div class="p-4 pb-0 pt-1">
+                                          <form id="itemDescForm">
+                                            <div class="mb-3">
+                                              <label class="form-label">Full Description: Glass Specification:</label>
+                                              <input class="form-control" type="number" placeholder="W" />
+                                              <div class="mt-1">
+                                                <input class="form-control" type="number" placeholder="H" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Glass" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Grids" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Spacer" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Shape" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Lead time" />
+                                              </div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label class="form-label">Frame Details:</label>
+                                              <input class="form-control" type="text" placeholder="Frame type" />
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Frame material" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Notes" />
+                                              </div>
+                                            </div>
+                                            <div class="mb-3">
+                                              <label class="form-label">Services:</label>
+                                              <input class="form-control" type="text" placeholder="Delivery" />
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Labor/Installation" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Material/Parts" />
+                                              </div>
+                                              <div class="mt-1">
+                                                <input class="form-control" type="text" placeholder="Special Service Notes" />
+                                              </div>
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btn-primary" type="submit" name="submit" form= "itemDescForm">Save </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              
                               <div class="item-desc">
-                                <p class="project-alpha-card-text"><strong>Full Description:</strong> Glass Specification: <br>
+                                <p><strong>Full Description:</strong> Glass Specification: <br>
                                   W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
                                   Grids= NA,<br>
                                   Spacer= N/A, OverAll Thickness= N/A,<br>
@@ -785,18 +857,60 @@
                                   Special service notes =</p>
                               </div>
                             </div>
-                            <div class="col-lg-4 col-xxl-4 mt-4 mt-lg-0 offset-xxl-1">
-                              <h6 class="fw-semi-bold ls mb-3 text-uppercase">Custom Fields</h6>
+                            <div class="col-lg-4 col-xxl-4">
+                              <div class="row-items align-items-center">
+                                <div class="header ls text-uppercase">Custom Fields</div>
+                                <button class="edit-icon-items" type="button" data-bs-toggle="modal" data-bs-target="#customfields-modal" onclick="toggleEditCustomFields(this)">✎</button>
+                                <div class="modal fade" id="customfields-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                  <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+                                    <div class="modal-content position-relative">
+                                      <div class="position-absolute top-0 end-0 mt-2 me-2 z-1">
+                                        <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body p-0">
+                                        <div class="rounded-top-3 py-3 ps-4 pe-6 bg-body-tertiary">
+                                          <div class="header mb-1" id="modalExampleDemoLabel">Edit Custom Fields </div>
+                                        </div>
+                                        <div class="p-4 pb-0 pt-1">
+                                          <form id="customFieldsForm">
+                                            <div class="mb-3">
+                                              <input class="form-control" type="text" placeholder="Tax" />
+                                            </div>
+                                            <div class="mb-3">
+                                              <input class="form-control" type="number" placeholder="Labor" />
+                                            </div>
+                                            <div class="mb-3">
+                                              <input class="form-control" type="number" placeholder="Hours" />
+                                            </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                                        <button class="btn btn-primary" type="submit" name="submit" form="customFieldsForm">Save </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
                               <div class="custom-fields">
-                                <p class="project-alpha-card-text"><strong>Tax:</strong> Yes<br>
+                                <p><strong>Tax:</strong> Yes<br>
                                    <strong>Labor:</strong> 2<br>
                                    <strong>Hours:</strong> 4</p>
                               </div>
                             </div>
-                            <button class="project-alpha-edit-icon-items" onclick="toggleEdit(this)">✎</button>
+                            <div class="col-lg-2 col-xxl-4">
+                              <div class="button-group mt-4 d-flex justify-content-center flex-wrap">
+                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button" onclick="toggleEditItem(this)">Edit</button>
+                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 2</button>
+                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 3</button>
+                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 4</button>
+                              </div>
+                            </div>
                           </div>
                           <div class="row mt-3">
-                            <h6 class="fw-semi-bold ls mb-3 text-uppercase">Attachments</h6>
+                            <div class="header ls mb-3 text-uppercase">Attachments</div>
                             <div class="pictures-section" id="pictures-1">
                               <!-- Initial image placeholder that triggers file selection -->
                               <div class="picture-placeholder mb-2" onclick="document.getElementById('fileInput').click();">
@@ -811,150 +925,9 @@
                                 <!-- Placeholder for file upload -->
                             </div>
                           </div>
-                          
                         </div>
-                        <!-- <div class="card-footer border-top text-end"><a class="btn btn-falcon-default btn-sm" href="#!"><span class="fas fa-dollar-sign fs-11 me-1"></span>Refund</a><a class="btn btn-falcon-default btn-sm ms-2" href="#!"><span class="fas fa-check fs-11 me-1"></span>Save changes</a></div> -->
                       </div>
 
-                      <div id="tableExample" data-list='{"valueNames":["itemNumber","itemName","quantity","price","total"],"page":5,"pagination":true}'>
-                        <div class="table-responsive scrollbar">
-                          <table class="table table-bordered table-striped fs-10 mb-0">
-                            <thead class="bg-200">
-                              <tr>
-                                <th class="text-900 sort" data-sort="itemNumber">Item Number</th>
-                                <th class="text-900 sort" data-sort="itemName">Item Name</th>
-                                <th class="text-900 sort" data-sort="quantity">Quantity</th>
-                                <th class="text-900 sort" data-sort="price">Price</th>
-                                <th class="text-900 sort" data-sort="total">Total</th>
-                              </tr>
-                            </thead>
-                            <tbody class="list">
-                              <tr>
-                                <td class="editable" data-type="itemNumber">SO12345</td>
-                                <td class="editable" data-type="itemName">2024-11-10</td>
-                                <td class="editable" data-type="quantity">ProjectA</td>
-                                <td class="editable" data-type="price">Glass Panel</td>
-                                <td class="editable" data-type="total">10</td>
-                              </tr>
-                               <tr>
-                              <td colspan="6">
-                                <div class="p-3">
-                                  <p><strong>Full Description:</strong> Glass Specification: <br>
-                                    W= 245, H= 24, Glass= 1/8 P62 Smoothside in TMP, 1/8 solar ban 60 TMP,<br>
-                                    Grids= NA,<br>
-                                    Spacer= N/A, OverAll Thickness= N/A,<br>
-                                    Shape= Square/Rectangular,<br>
-                                    Lead time= Standard<br><br>
-                      
-                                    Frame details:<br>
-                                    Frame type= N/A, Frame material= N/A,<br>
-                                    Notes=<br><br>
-                      
-                                    Services:<br>
-                                    DeliveryDelivery= For pick up from designated warehouse,<br>
-                                    Labor / Installation= Not included,<br>
-                                    Material/Parts= Not included,<br>
-                                    Special service notes =</p>
-                                    <div class="pictures-section" id="pictures-1">
-                                      <!-- Initial image placeholder that triggers file selection -->
-                                      <div class="picture-placeholder mb-2" onclick="document.getElementById('fileInput').click();">
-                                          <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
-                                      </div>
-                                  
-                                      <!-- Hidden file input for selecting image -->
-                                      <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'pictures-1')">
-                                  
-
-                                    
-                                    
-                                
-                                  </div>
-                                      <!-- Add File -->
-                                      <div id="filePreview" class="file-container">
-                                        <!-- Placeholder for file upload -->
-                                    </div>
-                                  
-                                  
-                                </td>
-                                </div>
-                              </td>
-                      
-                              <!-- Column for More Information including Tax, Labor, and Hours -->
-                              <td colspan="2">
-                                <div class="p-3">
-                                  <p><strong>Tax:</strong> Yes<br>
-                                     <strong>Labor:</strong> 2<br>
-                                     <strong>Hours:</strong> 4</p>
-                                </div>
-                              </td>
-                              
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                            </tbody>
-                          </table>
-                        </div>
-
-
-                      
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      
-                      
-
-
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
                     <br>
                     <h4 id="list-item-4">Team & Tasks</h4>
                     <div class="d-flex justify-content-end">
@@ -2288,6 +2261,76 @@
 
 <!-- Project Details Card -->
 <script>
+
+  function toggleEditItemDesc(button) {
+    const card = button.closest('.items-card');
+    const itemDesc = card.querySelector('.item-desc');
+
+    // Add event listeners for modal events
+    const modal = document.getElementById('itemdesc-modal');
+
+    // When the modal is shown
+    modal.addEventListener('show.bs.modal', () => {
+      itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
+    });
+
+    // When the modal is hidden
+    modal.addEventListener('hidden.bs.modal', () => {
+      itemDesc.style.border = '1px solid #ccc'; // Revert border color
+    });
+  }
+
+  function toggleEditCustomFields(button) {
+    const card = button.closest('.items-card');
+    const itemDesc = card.querySelector('.custom-fields');
+
+    // Add event listeners for modal events
+    const modal = document.getElementById('customfields-modal');
+
+    // When the modal is shown
+    modal.addEventListener('show.bs.modal', () => {
+      itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
+    });
+
+    // When the modal is hidden
+    modal.addEventListener('hidden.bs.modal', () => {
+      itemDesc.style.border = '1px solid #ccc'; // Revert border color
+    });
+  }
+
+  function toggleEditItem(button) {
+    const card = button.closest('.items-card');
+
+    const texts = card.querySelectorAll('.items-card-text'); // Target text elements
+    const iconButtons = card.querySelectorAll('.edit-icon-items')
+
+    const isEditing = button.textContent === 'Edit';
+
+    texts.forEach(text => {
+      if (isEditing) {
+        text.setAttribute('contenteditable', 'true');
+        text.classList.add('editable');
+        text.style.backgroundColor = '#D9EAFD';  // Highlight editable fields
+        text.style.outline = 'none';           // Remove default focus outline
+      } else {
+        text.removeAttribute('contenteditable');
+        text.classList.remove('editable');
+        text.style.backgroundColor = 'transparent';  // Revert to default state
+      }
+    });
+
+    iconButtons.forEach(icon => {
+      if (isEditing) {
+        icon.style.display = 'flex';  // show icon button
+      } else {
+        icon.style.display = 'none';  // Revert to default state
+      }
+    });
+
+    // Update button text for toggling edit mode
+    button.textContent = isEditing ? 'Save' : 'Edit';  // Switch between edit and save
+  }
+
   function toggleEdit(button) {
     // Get the card that contains the button
     const card = button.closest('.card');
