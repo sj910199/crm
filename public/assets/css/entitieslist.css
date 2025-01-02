@@ -319,6 +319,8 @@ canvas {
   line-height: 1.4;
   color: #333;
   width: 50%;
+  flex-grow: 0;
+  overflow: auto;
   padding: 4px 8px;
   border-radius: 6px;
   background-color: transparent;
@@ -564,6 +566,7 @@ Select2 width */
 .items-card {
   font-size: 14px;
   color: rgb(3, 3, 3);
+  flex-grow: 1
 }
 
 .item-desc, .custom-fields {

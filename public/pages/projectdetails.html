@@ -448,8 +448,20 @@
                                     </select>
                                     <div class="project-alpha-card-text">P-12345</div>
                                     <div class="project-alpha-card-text">WO-1234</div>
+
+                                    <div class="input-group input-group-sm mb-3"><span class="input-group-text" id="inputGroup-sizing-sm">Start Date</span>
+                                      <input class="form-control" type="text" placeholder="dd/mm/yy" aria-describedby="inputGroup-sizing-sm" />
+                                    </div>
+
+                                    <div class="input-group input-group-sm mb-3"><span class="input-group-text" id="inputGroup-sizing-sm">Approved Date</span>
+                                      <input class="form-control" type="text" placeholder="dd/mm/yy" aria-describedby="inputGroup-sizing-sm" />
+                                    </div>
                                     
-                                    <div class="dates">
+                                    <div class="input-group input-group-sm mb-3"><span class="input-group-text" id="inputGroup-sizing-sm">Closed Date</span>
+                                      <input class="form-control" type="text" placeholder="dd/mm/yy" aria-describedby="inputGroup-sizing-sm" />
+                                    </div>
+                                    
+                                    <!-- <div class="dates">
                                       <label class="form-label" for="start-date">Start Date</label>
                                     <input class="form-control datetimepicker" id="start-date" type="text" placeholder="dd/mm/yy - hh:mm" data-options='{"disableMobile":true}' />
                                     </div>
@@ -462,7 +474,7 @@
                                     <div class="dates">
                                     <label class="form-label" for="closed-date">Closed Date</label>
                                     <input class="form-control datetimepicker" id="closed-date" name ="closed-date" type="text" placeholder="dd/mm/yy" data-options='{"disableMobile":true}' />
-                                    </div>
+                                    </div> -->
 <!-- 
                                     <div class="project-alpha-card-text">Start: 2024-12-01</div>
                                     <div class="project-alpha-card-text">Approved: 2024-12-15</div>
@@ -489,7 +501,9 @@
                                       <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 3</button>
                                       <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 4</button>
                                     </div>
-
+                                      
+                                    <button class="project-alpha-edit-icon" onclick="toggleEdit(this)">✎
+                                      
                                     </button>
                                     
                                   </div>
@@ -497,10 +511,10 @@
                         
                             <!-- Right card -->
                             <div class="col-md-6 d-flex">
-                              <div class="card project-alpha-card flex-grow-1">
+                              <div class="card project-alpha-card flex-grow-1 d-flex flex-column">
                                 <h3>Project Scope</h3>
                             
-                                <div class="project-alpha-card-text" id="scope-view">
+                                <div class="project-alpha-card-text" style="width: 100%; height: 220px;" id="scope-view">
                                   Our mission is to deliver innovative, sustainable, and customer-centric solutions that empower businesses to thrive in the digital age.
                                 </div>
                             
@@ -735,7 +749,10 @@
                         </div>
                       </div>
 
+                      <!-- new -->
+                      <div class="items d-flex justify-content-between align-items-start mb-3">
                       <div class="mb-3 items-card">
+                        <!-- Items Card -->
                         <div class="card-header">
                           <div class="row align-items-center mt-2">
                             <div class="col-3">
@@ -855,7 +872,7 @@
                                   Special service notes =</p>
                               </div>
                             </div>
-                            <div class="col-lg-4 col-xxl-4">
+                            <div class="col-lg-6 col-xxl-4">
                               <div class="row-items align-items-center">
                                 <div class="header ls text-uppercase">Custom Fields</div>
                                 <button class="edit-icon-items" type="button" data-bs-toggle="modal" data-bs-target="#customfields-modal" onclick="toggleEditCustomFields(this)">✎</button>
@@ -898,14 +915,14 @@
                                    <strong>Hours:</strong> 4</p>
                               </div>
                             </div>
-                            <div class="col-lg-2 col-xxl-4">
+                            <!-- <div class="col-lg-2 col-xxl-4">
                               <div class="button-group mt-4 d-flex justify-content-center flex-wrap">
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button" onclick="toggleEditItem(this)">Edit</button>
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 2</button>
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 3</button>
                                 <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 4</button>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                           <div class="row mt-3">
                             <div class="header ls mb-3 text-uppercase">Attachments</div>
@@ -925,6 +942,15 @@
                           </div>
                         </div>
                       </div>
+                      <div class="col-lg-2 col-xxl-4">
+                        <div class="button-group mt-2 d-flex justify-content-center flex-wrap">
+                          <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button" onclick="toggleEditItem(this)">Edit</button>
+                          <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 2</button>
+                          <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 3</button>
+                          <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 4</button>
+                        </div>
+                      </div>
+                    </div>
 
                     <br>
                     <h4 id="list-item-4">Team & Tasks</h4>
@@ -2260,44 +2286,45 @@
 <!-- Project Details Card -->
 <script>
 
-  function toggleEditItemDesc(button) {
-    const card = button.closest('.items-card');
-    const itemDesc = card.querySelector('.item-desc');
+  document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('itemdesc-modal');
+  const itemDesc = document.querySelector('.item-desc');
 
-    // Add event listeners for modal events
-    const modal = document.getElementById('itemdesc-modal');
+    if (modal && itemDesc) {
+      // When the modal is shown
+      modal.addEventListener('show.bs.modal', () => {
+        itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
+      });
 
-    // When the modal is shown
-    modal.addEventListener('show.bs.modal', () => {
-      itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
-    });
+      // When the modal is hidden
+      modal.addEventListener('hidden.bs.modal', () => {
+        itemDesc.style.border = '1px solid #ccc'; // Revert border color
+      });
+    }
+  });
 
-    // When the modal is hidden
-    modal.addEventListener('hidden.bs.modal', () => {
-      itemDesc.style.border = '1px solid #ccc'; // Revert border color
-    });
-  }
-
-  function toggleEditCustomFields(button) {
-    const card = button.closest('.items-card');
-    const itemDesc = card.querySelector('.custom-fields');
-
-    // Add event listeners for modal events
+  document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('customfields-modal');
+    const itemDesc = document.querySelector('.custom-fields');
 
-    // When the modal is shown
-    modal.addEventListener('show.bs.modal', () => {
-      itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
-    });
+    if (modal && itemDesc) {
+      // When the modal is shown
+      modal.addEventListener('show.bs.modal', () => {
+        itemDesc.style.border = '1px solid #2c7be5'; // Highlight border
+      });
 
-    // When the modal is hidden
-    modal.addEventListener('hidden.bs.modal', () => {
-      itemDesc.style.border = '1px solid #ccc'; // Revert border color
-    });
-  }
+      // When the modal is hidden
+      modal.addEventListener('hidden.bs.modal', () => {
+        itemDesc.style.border = '1px solid #ccc'; // Revert border color
+      });
+    }
+  });
 
   function toggleEditItem(button) {
-    const card = button.closest('.items-card');
+    // const card = button.closest('.items-card');
+
+    const parentContainer = button.closest('.items'); // Or other suitable parent
+    const card = parentContainer.querySelector('.items-card'); 
 
     const texts = card.querySelectorAll('.items-card-text'); // Target text elements
     const iconButtons = card.querySelectorAll('.edit-icon-items')
