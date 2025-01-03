@@ -1,11 +1,3 @@
-/* Sidebar */
-.sticky-sidebar {
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  padding: 10px 0;
-}
-
 /* Hide buttons by default */
 .button-container {
   display: none; /* Hidden by default */
