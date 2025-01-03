@@ -733,39 +733,69 @@
                       </div>
 
                       <!-- new -->
-                      <div class="items d-flex justify-content-between align-items-start mb-3" style="gap: 20px;">
+                      <div class="items d-flex justify-content-between align-items-start mb-3">
                       <div class="mb-3 items-card">
                         <!-- Items Card -->
                         <div class="card-header">
-                          <div class="row align-items-center mt-2">
-                            <div class="col-3">
+                          <div class="row align-items-center d-flex flex-wrap mt-2">
+                            <div class="col-4 col-sm-4 col-md-3">
                               <div class="header">Item Number </div>
                               <div class="editable">01</div>
                             </div>
-                            <div class="col-3">
+                            <div class="col-6 col-sm-4 col-md-3">
                               <div class="header">Item Name</div>
                               <div class="items-card-text">Enter Item Name</div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-4 col-sm-4 col-md-2" id="header-mobile-hide">
                               <div class="header">Quantity  </div>
                               <div class="editable">01</div>
                             </div>
-                            <div class="col">
+                            <div class="col-4 col-sm-4 col-md" id="header-mobile-hide">
                               <div class="header">Price  </div>
                               <div class="editable">01</div> 
                             </div>
-                            <div class="col">
+                            <div class="col-4 col-sm-4 col-md" id="header-mobile-hide">
                               <div class="header">Total </div>
                               <div class="editable">01</div>
                             </div>
+
+                                <!-- Mobile view: 3-dot button (Upper Right) -->
+                            <div class="dropdown-items d-block d-sm-none d-lg-none col-2 p-3">
+                              <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i> <!-- 3 dots icon -->
+                              </button>
+                              <!-- Mobile dropdown with buttons -->
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><button class="dropdown-item" type="button" onclick="toggleEditItem(this)">Edit</button></li>
+                                <li><button class="dropdown-item">Action 2</button></li>
+                                <li><button class="dropdown-item">Action 3</button></li>
+                                <li><button class="dropdown-item">Action 4</button></li>
+                              </ul>
+                            </div>
+                      
                           </div>
                         </div>
                         
                         <div class="border-top mt-2 pt-3">
-                          <div class="row">
+                          <div class="row" id="header-mobile">
+                            <div class="col-4 col-sm-4 col-md">
+                              <div class="header">Quantity  </div>
+                              <div class="editable">01</div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-md">
+                              <div class="header">Price  </div>
+                              <div class="editable">01</div> 
+                            </div>
+                            <div class="col-4 col-sm-4 col-md">
+                              <div class="header">Total </div>
+                              <div class="editable">01</div>
+                            </div>
+                          </div>
+                          
+                          <div class="row mt-3 reverse-columns">
                             <div class="col-lg-6 col-xxl-7">
                               <div class="row-items align-items-center">
-                                <div class="header ls text-uppercase">Item Description</div>
+                                <div class="header ls text-uppercase" id="item-desc-header">Item Description</div>
                                 <button class="edit-icon-items" type="button" data-bs-toggle="modal" data-bs-target="#itemdesc-modal" onclick="toggleEditItemDesc(this)">✎</button>
                                 <div class="modal fade" id="itemdesc-modal" tabindex="-1" role="dialog" aria-hidden="true">
                                   <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
@@ -901,16 +931,16 @@
                           </div>
                           <div class="row mt-3">
                             <div class="header ls mb-3 text-uppercase">Attachments</div>
-                            <div class="pictures-section mb-3 d-flex justify-content-between" id="pictures-1">
+                            <div class="pictures-section mb-3 d-flex flex-wrap justify-content-between" id="pictures-1">
                               <!-- Placeholder for image 1 -->
-                              <div class="picture-placeholder" id="picture-1" onclick="document.getElementById('fileInput1').click();">
+                              <div class="picture-placeholder d-flex" id="picture-1" onclick="document.getElementById('fileInput1').click();">
                                 <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
                               </div>
                               <!-- Hidden file input for selecting image -->
                               <input type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
                             
                               <!-- Placeholder for image 2 -->
-                              <div class="picture-placeholder" id="picture-2" onclick="document.getElementById('fileInput2').click();">
+                              <div class="picture-placeholder d-flex" id="picture-2" onclick="document.getElementById('fileInput2').click();">
                                 <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
                               </div>
                               <!-- Hidden file input for selecting image -->

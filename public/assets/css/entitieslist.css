@@ -1,7 +1,3 @@
-/* * {
-  font-family: "font-base"
-} */
-
 /* Hide buttons by default */
 .button-container {
   display: none; /* Hidden by default */
@@ -114,10 +110,6 @@
   background-color: #f0f0f0;
 }
 
-
-
-
-
 /* Chart container */
 /* Main container for both chart-container divs */
 .chart-row {
@@ -146,166 +138,10 @@ canvas {
 }
 
 
-
-
 /* projectdetails */
 .d-md-block{
   padding-top: 10px;;
 }
-
-/* Items Section */
-/* Style the picture-item container */
-.pictures-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-}
-
-.picture-item {
-  position: relative;
-}
-
-.picture-placeholder {
-  /* width: 400px; 
-  height: 230px; 
-  border: 2px dashed #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: #f9f9f9; */
-  /* width: 440px; */
-  flex: 1; /* Equal space for both placeholders */
-  max-width: 48%; /* Limit the size to prevent overflow */
-  aspect-ratio: 4 / 3; 
-  height: 250px;
-  border: 2px dashed #ccc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.picture-placeholder i {
-  font-size: 24px;
-  color: #888;
-}
-
-.uploaded-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensures the whole image is visible */
-  background-color: #f9f9f9; 
-  border-radius: 4px;
-}
-
-/* Add hover effect for better user experience */
-.picture-placeholder:hover {
-  border-color: #888;
-}
-
-/* Adjust the positioning of the remove button */
-.remove-picture {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-}
-
-/* Fileeeeeeeeee */
-
-
-    .file-placeholder {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 48%;
-        height: 25px;
-        border: 2px dashed #ccc;
-        cursor: pointer;
-        margin-right: 15px;
-        margin-bottom: 15px;
-        position: relative;
-    }
-
-    .file-placeholder i {
-        font-size: 48px; /* Larger icon for better visibility */
-        color: #777;
-    }
-
-    .file-preview-section {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    .file-item {
-        display: flex;
-        align-items: center;
-        margin-right: 15px;
-        margin-bottom: 10px;
-        position: relative;
-    }
-
-    .file-item img {
-        max-width: 100px;
-        max-height: 100px;
-        margin-right: 10px;
-        border: 1px solid #ccc;
-    }
-
-    .file-item .file-info {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .file-item i {
-        font-size: 24px;
-        margin-right: 10px;
-    }
-
-    .file-item p {
-        margin: 0;
-    }
-
-    /* Remove button */
-    .file-item .remove-button {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-        background-color: red;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-
-
-
-
-
 
 /* Project Details Card */
 
@@ -545,6 +381,13 @@ Select2 width */
   margin-top: 56px; /* Add top margin to push it below the navbar */
 }
 
+/* Items Section */
+.items {
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
 .header {
   font-weight: 600;
   font-size: 13px;
@@ -561,10 +404,7 @@ Select2 width */
   display: inline-block;
 }
 
-/* Items table */
-/* Initial view mode - dark blue */
 .editable {
-  /* background-color: darkblue; */
   color: rgb(3, 3, 3);
   position: relative;
   padding: 3px;
@@ -578,11 +418,6 @@ Select2 width */
 }
 
 .editable input {
-  /* width: 50%;
-  border: none;
-  background-color: transparent;
-  color: rgb(12, 12, 12);
-  outline: none; */
   width: 100%;
   height: 1rem; 
   padding: 0; /* Remove padding to avoid shifting */
@@ -623,4 +458,184 @@ Select2 width */
   width: 100px; 
   text-align: center; 
   padding: 5px 10px; 
+}
+
+#header-mobile {
+  display: none;
+}
+
+/* Ensure desktop buttons are not shown in mobile or tablet view */
+@media (max-width: 768px) {
+  /* Hide desktop buttons on mobile and tablet */
+  .button-group {
+    display: none !important; /* Force hide on smaller screens */
+  }
+
+  .items-card {
+    width: 100%;
+  }
+
+  .card-header .row .col {
+    flex: 0 0 100%; /* Take full width in mobile view */
+    max-width: 100%;
+    margin-bottom: 15px; /* Add spacing for better readability */
+  }
+
+  #header-mobile-hide {
+    display: none;
+  }
+
+  #header-mobile {
+    display: flex;
+  }
+
+  #item-desc-header {
+    margin-top: 1rem;
+  }
+
+  .reverse-columns {
+    flex-direction: column-reverse;
+  }
+
+  .pictures-section {
+    gap: 15px;
+  }
+}
+
+/* Pictures Section */
+.pictures-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.picture-item {
+  position: relative;
+}
+
+.picture-placeholder {
+  /* width: 400px; 
+  height: 230px; 
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f9f9f9; */
+  /* width: 440px; */
+  flex: auto; /* Equal space for both placeholders */
+  max-width: 100%; /* Limit the size to prevent overflow */
+  aspect-ratio: 4 / 3; 
+  height: 250px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.picture-placeholder i {
+  font-size: 24px;
+  color: #888;
+}
+
+.uploaded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the whole image is visible */
+  background-color: #f9f9f9; 
+  border-radius: 4px;
+}
+
+/* Add hover effect for better user experience */
+.picture-placeholder:hover {
+  border-color: #888;
+}
+
+/* Adjust the positioning of the remove button */
+.remove-picture {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* File */
+.file-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    height: 25px;
+    border: 2px dashed #ccc;
+    cursor: pointer;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.file-placeholder i {
+    font-size: 48px; /* Larger icon for better visibility */
+    color: #777;
+}
+.file-preview-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.file-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+.file-item .file-info {
+    display: flex;
+    flex-direction: column;
+}
+.file-item i {
+    font-size: 24px;
+    margin-right: 10px;
+}
+.file-item p {
+    margin: 0;
+}
+/* Remove button */
+.file-item .remove-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
