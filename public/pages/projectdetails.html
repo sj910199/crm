@@ -526,19 +526,6 @@
                               </div>
                             </div>
                             
-                            
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 
 
                             <div class="col-md-6 d-flex">
@@ -573,10 +560,6 @@
                                 </tr>
                               </thead>
                               <tbody class="list">
-
-                               
-
-
                                 <tr>
                                   <td class="orderNumber">John Doe</td>
                                   <td class="orderDate">Project Manager</td>
@@ -716,7 +699,7 @@
 
                       <div class="d-flex justify-content-end">
                         <div class="btn-group">
-                          <button class="btn btn-falcon-default btn-sm m-3 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+                          <button class="btn btn-falcon-default btn-sm m-3 me-0 dropdown-toggle" type="button" style="z-index: 10;" data-bs-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                             <span class="fas fa-plus me-1" data-fa-transform="shrink-3"></span>Add Item
                           </button>
                           <div class="dropdown-menu py-0">
@@ -750,7 +733,7 @@
                       </div>
 
                       <!-- new -->
-                      <div class="items d-flex justify-content-between align-items-start mb-3">
+                      <div class="items d-flex justify-content-between align-items-start mb-3" style="gap: 20px;">
                       <div class="mb-3 items-card">
                         <!-- Items Card -->
                         <div class="card-header">
@@ -915,26 +898,25 @@
                                    <strong>Hours:</strong> 4</p>
                               </div>
                             </div>
-                            <!-- <div class="col-lg-2 col-xxl-4">
-                              <div class="button-group mt-4 d-flex justify-content-center flex-wrap">
-                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button" onclick="toggleEditItem(this)">Edit</button>
-                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 2</button>
-                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 3</button>
-                                <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 4</button>
-                              </div>
-                            </div> -->
                           </div>
                           <div class="row mt-3">
                             <div class="header ls mb-3 text-uppercase">Attachments</div>
-                            <div class="pictures-section" id="pictures-1">
-                              <!-- Initial image placeholder that triggers file selection -->
-                              <div class="picture-placeholder mb-2" onclick="document.getElementById('fileInput').click();">
-                                  <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
+                            <div class="pictures-section mb-3 d-flex justify-content-between" id="pictures-1">
+                              <!-- Placeholder for image 1 -->
+                              <div class="picture-placeholder" id="picture-1" onclick="document.getElementById('fileInput1').click();">
+                                <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
                               </div>
-                        
                               <!-- Hidden file input for selecting image -->
-                              <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'pictures-1')">
+                              <input type="file" id="fileInput1" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-1')">
+                            
+                              <!-- Placeholder for image 2 -->
+                              <div class="picture-placeholder" id="picture-2" onclick="document.getElementById('fileInput2').click();">
+                                <i class="fas fa-image"></i> <!-- Plus icon for adding picture -->
+                              </div>
+                              <!-- Hidden file input for selecting image -->
+                              <input type="file" id="fileInput2" style="display: none;" accept="image/*" onchange="previewAndUploadImage(this, 'picture-2')">
                             </div>
+                        
                               <!-- Add File -->
                               <div id="filePreview" class="file-container">
                                 <!-- Placeholder for file upload -->
@@ -942,7 +924,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-2 col-xxl-4">
+                      <div class="col">
                         <div class="button-group mt-2 d-flex justify-content-center flex-wrap">
                           <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button" onclick="toggleEditItem(this)">Edit</button>
                           <button class="btn btn-falcon-default btn-sm me-1 mb-1" type="button">Action 2</button>
@@ -1914,89 +1896,134 @@
 <!-- // items section:details
  // Function to add a picture input field with preview functionality -->
 <script>
-
  // Preview and Upload Image
  function previewAndUploadImage(input, pictureSectionId) {
-     if (input.files && input.files[0]) {
-         const file = input.files[0];
-         const reader = new FileReader();
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const pictureSection = document.getElementById(pictureSectionId);
+
+      // Remove placeholder content
+      pictureSection.innerHTML = '';
+
+      // Create an image element
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      img.alt = 'Uploaded Image';
+      img.classList.add('uploaded-image')
+
+      // Create a remove button
+      const removeButton = document.createElement('button');
+      removeButton.textContent = 'X';
+      removeButton.classList.add('remove-picture');
+      removeButton.onclick = function () {
+        removePicture(pictureSection, input.id);
+      };
+
+      // Add the image and button to the placeholder
+      pictureSection.appendChild(img);
+      pictureSection.appendChild(removeButton);
+    };
+
+    reader.readAsDataURL(file);
+
+    // Upload the image to the server (optional)
+    uploadImageToServer(file);
+  }
+}
+
+//  function previewAndUploadImage(input, pictureSectionId) {
+//      if (input.files && input.files[0]) {
+//          const file = input.files[0];
+//          const reader = new FileReader();
  
-         // Preview the image
-         reader.onload = function(e) {
-             // Get the picture section
-             const pictureSection = document.getElementById(pictureSectionId);
+//          // Preview the image
+//          reader.onload = function(e) {
+//              // Get the picture section
+//              const pictureSection = document.getElementById(pictureSectionId);
  
-             // Remove existing placeholder before adding the uploaded image
-             const existingPlaceholder = pictureSection.querySelector('.picture-placeholder');
-             if (existingPlaceholder) {
-                 existingPlaceholder.remove();
-             }
+//              // Remove existing placeholder before adding the uploaded image
+//              const existingPlaceholder = pictureSection.querySelector('.picture-placeholder');
+//              if (existingPlaceholder) {
+//                  existingPlaceholder.remove();
+//              }
  
-             // Create a new image container for the uploaded image
-             const newPictureItem = document.createElement('div');
-             newPictureItem.classList.add('picture-item', 'mb-2');
+//              // Create a new image container for the uploaded image
+//              const newPictureItem = document.createElement('div');
+//              newPictureItem.classList.add('picture-item', 'mb-2');
  
-             // Create an image element for the uploaded file
-             const img = document.createElement('img');
-             img.src = e.target.result; // Local preview of the image
-             img.alt = 'Uploaded Image';
-             img.classList.add('img-fluid');
-             img.style.maxWidth = '400px'; // Adjust size as needed
+//              // Create an image element for the uploaded file
+//              const img = document.createElement('img');
+//              img.src = e.target.result; // Local preview of the image
+//              img.alt = 'Uploaded Image';
+//              img.classList.add('img-fluid');
+//              img.style.maxWidth = '400px'; // Adjust size as needed
  
-             // Create a remove button for the uploaded image
-             const removeButton = document.createElement('button');
-             removeButton.classList.add('btn', 'btn-danger', 'btn-sm', 'remove-picture');
-             removeButton.textContent = 'x';
-             removeButton.type = 'button';
-             removeButton.onclick = function() {
-                 removePicture(this);
-             };
+//              // Create a remove button for the uploaded image
+//              const removeButton = document.createElement('button');
+//              removeButton.classList.add('btn', 'btn-danger', 'btn-sm', 'remove-picture');
+//              removeButton.textContent = 'x';
+//              removeButton.type = 'button';
+//              removeButton.onclick = function() {
+//                  removePicture(this);
+//              };
  
-             // Append the image and remove button to the new picture container
-             newPictureItem.appendChild(img);
-             newPictureItem.appendChild(removeButton);
+//              // Append the image and remove button to the new picture container
+//              newPictureItem.appendChild(img);
+//              newPictureItem.appendChild(removeButton);
  
-             // Add the new picture container to the pictures section
-             pictureSection.appendChild(newPictureItem);
+//              // Add the new picture container to the pictures section
+//              pictureSection.appendChild(newPictureItem);
  
-             // Clear the file input to allow re-selection of the same file
-             input.value = '';
+//              // Clear the file input to allow re-selection of the same file
+//              input.value = '';
  
-             // Add a new picture placeholder for additional image uploads at the end
-             addNewPlaceholder(pictureSection);
-         };
+//              // Add a new picture placeholder for additional image uploads at the end
+//              addNewPlaceholder(pictureSection);
+//          };
  
-         // Read the file to display the preview
-         reader.readAsDataURL(file);
+//          // Read the file to display the preview
+//          reader.readAsDataURL(file);
  
-         // Upload the image to the server (optional)
-         uploadImageToServer(file);
-     }
- }
+//          // Upload the image to the server (optional)
+//          uploadImageToServer(file);
+//      }
+//  }
  
- // Function to add a new image placeholder after an image is uploaded
- function addNewPlaceholder(pictureSection) {
-     // Create a new image placeholder
-     const newPlaceholder = document.createElement('div');
-     newPlaceholder.classList.add('picture-placeholder', 'mb-2');
-     newPlaceholder.onclick = function() {
-         document.getElementById('fileInput').click();
-     };
+//  Function to add a new image placeholder after an image is uploaded
+//  function addNewPlaceholder(pictureSection) {
+//      // Create a new image placeholder
+//      const newPlaceholder = document.createElement('div');
+//      newPlaceholder.classList.add('picture-placeholder', 'mb-2');
+//      newPlaceholder.onclick = function() {
+//          document.getElementById('fileInput').click();
+//      };
  
-     // Add the plus icon inside the new placeholder
-     const plusIcon = document.createElement('i');
-     plusIcon.classList.add('fas', 'fa-plus');
-     newPlaceholder.appendChild(plusIcon);
+//      // Add the plus icon inside the new placeholder
+//      const plusIcon = document.createElement('i');
+//      plusIcon.classList.add('fas', 'fa-plus');
+//      newPlaceholder.appendChild(plusIcon);
  
-     // Append the new placeholder to the pictures section after all images
-     pictureSection.appendChild(newPlaceholder);
- }
+//      // Append the new placeholder to the pictures section after all images
+//      pictureSection.appendChild(newPlaceholder);
+//  }
  
- // Function to remove picture
- function removePicture(button) {
-     const pictureItem = button.parentNode;
-     pictureItem.remove();
- }
+function removePicture(pictureSection, inputId) {
+  // Clear the placeholder
+  pictureSection.innerHTML = '<i class="fas fa-image"></i>';
+
+  // Clear the file input value
+  const input = document.getElementById(inputId);
+  input.value = '';
+}
+
+//  // Function to remove picture
+//  function removePicture(button) {
+//      const pictureItem = button.parentNode;
+//      pictureItem.remove();
+//  }
  
  // Function to upload the image to the server (optional)
  function uploadImageToServer(file) {
