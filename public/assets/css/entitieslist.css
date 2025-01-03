@@ -1,3 +1,11 @@
+/* Sidebar */
+.sticky-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  padding: 10px 0;
+}
+
 /* Hide buttons by default */
 .button-container {
   display: none; /* Hidden by default */
@@ -192,6 +200,11 @@ canvas {
   display: inline-block;
 }
 
+.input-group {
+  width: 50%;
+  display: none;
+}
+
 
 .project-alpha-dropdown {
   font-size: 14px;
@@ -248,13 +261,13 @@ canvas {
 
 .project-alpha-edit-icon {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   padding: 8px;
   background: #fff;
   color: #374151;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -346,7 +359,7 @@ Select2 width */
 
 /* Set a reduced width for the select2 container */
 .select2-container--default .select2-selection--single {
-  width: 322px !important; /* Reduce width when editing */
+  width: 50% !important; /* Reduce width when editing */
   background-color: #1f4672; /* Background color for the select input */
 }
 
@@ -380,6 +393,21 @@ Select2 width */
 #list-example {
   margin-top: 56px; /* Add top margin to push it below the navbar */
 }
+
+/* Table */
+
+/* Ensure all table cells have equal width */
+.table th, .table td {
+  text-align: center; 
+  word-wrap: break-word; /* Prevents content from overflowing */
+  width: 9%
+}
+
+/* Styling buttons inside table cells */
+.table .btn {
+  margin: 0 4px; /* Adds spacing between buttons */
+}
+
 
 /* Items Section */
 .items {
